@@ -10,7 +10,7 @@
     detail: Sept. 2010 ~ Jun. 2016
     i18n: company_a_date
   job:
-    detail: Stubborn stone.
+    detail: Stubborn stone
     i18n: company_a_job
   icon: fa-plus-square
   present: true
@@ -19,7 +19,7 @@
     detail: Shandong University
     i18n: company_b
   desc:
-    detail: Explored vehicle major and enjoyed pure friendship.
+    detail: Explored vehicle engine major.
     i18n: company_b_desc
   date:
     detail: Sept. 2016 ~ Jun. 2020
@@ -30,15 +30,15 @@
   icon: fa-plus-square
   
 - name:
-    detail: Shandong University
+    detail: Johns Hopkins University
     i18n: company_b
   desc:
-    detail: Explored vehicle major and enjoyed pure friendship.
+    detail: Explored robotics major, especially on motion planning and control.
     i18n: company_b_desc
   date:
     detail: Sept. 2016 ~ Jun. 2020
     i18n: company_b_date
   job:
-    detail: Undergraduate
+    detail: Master Student
     i18n: company_b_job
   icon: fa-plus-square
