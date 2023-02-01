@@ -29,16 +29,16 @@
     i18n: company_b_job
   icon: fa-plus-square
   
-#   - name:
-#     detail: Johns Hopkins University
-#     i18n: company_b
-#   desc:
-#     detail: Explored robotics major.
-#     i18n: company_b_desc
-#   date:
-#     detail: Jan. 2020 ~ Dec. 2022
-#     i18n: company_b_date
-#   job:
-#     detail: Master Student
-#     i18n: company_b_job
-#   icon: fa-plus-square
+  - name:
+    detail: Johns Hopkins University
+    i18n: company_b
+  desc:
+    detail: Explored robotics major.
+    i18n: company_b_desc
+  date:
+    detail: Jan. 2020 ~ Dec. 2022
+    i18n: company_b_date
+  job:
+    detail: Master Student
+    i18n: company_b_job
+  icon: fa-plus-square
