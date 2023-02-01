@@ -29,16 +29,16 @@
     i18n: company_b_job
   icon: fa-plus-square
   
-  - name:
-    detail: Johns Hopkins University
+- name:
+    detail: Shandong University
     i18n: company_b
   desc:
-    detail: Explored robotics major.
+    detail: Explored vehicle major and enjoyed pure friendship.
     i18n: company_b_desc
   date:
-    detail: Jan. 2020 ~ Dec. 2022
+    detail: Sept. 2016 ~ Jun. 2020
     i18n: company_b_date
   job:
-    detail: Master Student
+    detail: Undergraduate
     i18n: company_b_job
   icon: fa-plus-square
