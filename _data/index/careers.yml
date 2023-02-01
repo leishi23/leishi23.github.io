@@ -1,30 +1,44 @@
 # careers section data
 # if you don't have language feature(language.yml is empty), ignore "i18n" items
 - name:
-    detail: Company A
-    i18n: company_a
+    detail: Xuancheng Senior High School
+    i18n: High School
   desc:
-    detail: I worked at Company A ...
+    detail: Focused on one thing and explored myself.
     i18n: company_a_desc
   date:
-    detail: Apr. 2016
+    detail: Sept. 2010 ~ Jun. 2016
     i18n: company_a_date
   job:
-    detail: CTO
+    detail: Stubborn stone.
     i18n: company_a_job
   icon: fa-plus-square
   present: true
 
 - name:
-    detail: Company B
+    detail: Shandong University
     i18n: company_b
   desc:
-    detail: I worked at Company B ...
+    detail: Explored vehicle major and enjoyed pure friendship.
     i18n: company_b_desc
   date:
-    detail: Jun. 2015
+    detail: Sept. 2016 ~ Jun. 2020
     i18n: company_b_date
   job:
-    detail: Full Stack Developer
+    detail: Undergraduate
+    i18n: company_b_job
+  icon: fa-plus-square
+  
+  - name:
+    detail: Johns Hopkins University
+    i18n: company_b
+  desc:
+    detail: Explored robotics major.
+    i18n: company_b_desc
+  date:
+    detail: Jan. 2020 ~ Dec. 2022
+    i18n: company_b_date
+  job:
+    detail: Master Student
     i18n: company_b_job
   icon: fa-plus-square
