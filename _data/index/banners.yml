@@ -2,11 +2,11 @@
 # Add items for each banner image in the carousel
 #
 # Images are expected to be located in `static/assets/img/`.
-- src: landing/b1.jpg
+- src: landing/wallhaven-weegvr.jpg
   title: first banner image
 
-- src: landing/b2.jpg
-  title: second banner image
+# - src: landing/b2.jpg
+#   title: second banner image
 
-- src: landing/b3.jpg
-  title: second banner image
+# - src: landing/b3.jpg
+#   title: second banner image
