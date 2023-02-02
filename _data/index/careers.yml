@@ -28,6 +28,7 @@
     detail: Undergraduate
     i18n: company_b_job
   icon: fa-plus-square
+  present: true
   
 - name:
     detail: Johns Hopkins University
