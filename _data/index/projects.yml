@@ -7,10 +7,10 @@
   repo: Jalpc
   img: /static/assets/img/landing/ur16e.webp
   desc: 
-    a: • Designed a general dynamic hybrid manipulation strategy for dynamic grasping.
-    b: • Designed specific unprecedented non-prehensile manipulation based on UR16e, including fast dynamical grasping mechanism.
-    c: • Customized double inverted pendulum model-based algorithm (MATLAB) to guide the motion planning of UR16e.
-    d: • Controlled a real UR16e with C++.
+    1: Designed a general dynamic hybrid manipulation strategy for dynamic grasping.
+    2: Designed specific unprecedented non-prehensile manipulation based on UR16e, including fast dynamical grasping mechanism.
+    3: Customized double inverted pendulum model-based algorithm (MATLAB) to guide the motion planning of UR16e.
+    4: Controlled a real UR16e with C++.
 
 - name: Rough Terrain Ground Vehicle Control
   i18n: cpython
@@ -18,6 +18,6 @@
   repo: cpython
   img: /static/assets/img/landing/carla.jpg
   desc: 
-    a: • Implemented algorithms from scratch on CARLA simulation to build a time-aligned dataset, including collecting, transforming and real-time plotting sensor data.
-    b: • Implemented a CNN & LSTM based model from scratch to make motion prediction of an autonomous ground vehicle in urban area and arbitrary rough terrain area. The imported rough terrain map is customized on RoadRunner.
-    c: • (IN PROGRESS) Implementing a MPPI-Control based algorithm to guide the motion planning and control of the vehicle.
+    1: Implemented algorithms from scratch on CARLA simulation to build a time-aligned dataset, including collecting, transforming and real-time plotting sensor data.
+    2: Implemented a CNN & LSTM based model from scratch to make motion prediction of an autonomous ground vehicle in urban area and arbitrary rough terrain area. The imported rough terrain map is customized on RoadRunner.
+    3: (IN PROGRESS) Implementing a MPPI-Control based algorithm to guide the motion planning and control of the vehicle.
