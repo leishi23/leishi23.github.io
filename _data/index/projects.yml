@@ -6,7 +6,7 @@
   gh_user: jarrekk
   repo: Jalpc
   img: /static/assets/img/landing/ur16e.webp
-  desc: |
+  str: |
     • Designed a general dynamic hybrid manipulation strategy for dynamic grasping.
     • Designed specific unprecedented non-prehensile manipulation based on UR16e, including fast dynamical grasping
     mechanism.
