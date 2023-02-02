@@ -18,8 +18,6 @@
   repo: cpython
   img: /static/assets/img/landing/carla.jpg
   desc: 
-    a: • Implemented algorithms from scratch on CARLA simulation to build a time-aligned dataset, including collecting,
-    transforming and real-time plotting sensor data.
-    b: • Implemented a CNN & LSTM based model from scratch to make motion prediction of an autonomous ground vehicle in
-    urban area and arbitrary rough terrain area. The imported rough terrain map is customized on RoadRunner.
+    a: • Implemented algorithms from scratch on CARLA simulation to build a time-aligned dataset, including collecting, transforming and real-time plotting sensor data.
+    b: • Implemented a CNN & LSTM based model from scratch to make motion prediction of an autonomous ground vehicle in urban area and arbitrary rough terrain area. The imported rough terrain map is customized on RoadRunner.
     c: • (IN PROGRESS) Implementing a MPPI-Control based algorithm to guide the motion planning and control of the vehicle.
