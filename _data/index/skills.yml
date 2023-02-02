@@ -3,4 +3,4 @@
 label: Ability
 id : cs
 aspects: Motivation, Robot Control, Robot Motion Planning, Machine Learing, Python, C++
-percentage: 100, 80, , 90, 65, 90, 50
+percentage: 100, 80, 90, 65, 90, 50
