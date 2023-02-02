@@ -5,8 +5,8 @@
 - src: landing/wallhaven-weegvr.jpg
   title: first banner image
 
-# - src: landing/b2.jpg
-#   title: second banner image
+- src: landing/b2.jpg
+  title: second banner image
 
-# - src: landing/b3.jpg
-#   title: second banner image
+- src: landing/b3.jpg
+  title: second banner image
