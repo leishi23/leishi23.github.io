@@ -27,7 +27,7 @@
   job:
     detail: Undergraduate
     i18n: company_b_job
-  icon: car
+  icon: fa-car
   present: true
   
 - name:
@@ -42,4 +42,4 @@
   job:
     detail: Master Student
     i18n: company_b_job
-  icon: gears
+  icon: fa-cogs
