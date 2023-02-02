@@ -12,7 +12,7 @@
   job:
     detail: Stubborn stone
     i18n: company_a_job
-  icon: fa-plus-square
+  icon: fa-grav
   present: true
 
 - name:
@@ -27,7 +27,7 @@
   job:
     detail: Undergraduate
     i18n: company_b_job
-  icon: fa-plus-square
+  icon: car
   present: true
   
 - name:
@@ -42,4 +42,4 @@
   job:
     detail: Master Student
     i18n: company_b_job
-  icon: fa-plus-circle
+  icon: gears
