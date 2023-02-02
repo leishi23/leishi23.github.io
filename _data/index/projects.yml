@@ -6,10 +6,11 @@
   gh_user: jarrekk
   repo: Jalpc
   img: /static/assets/img/landing/ur16e.webp
-  desc: • Designed a general dynamic hybrid manipulation strategy for dynamic grasping.
-  desc: • Designed specific unprecedented non-prehensile manipulation based on UR16e, including fast dynamical grasping mechanism.
-  desc: • Customized double inverted pendulum model-based algorithm (MATLAB) to guide the motion planning of UR16e.
-  desc: • Controlled a real UR16e with C++.
+  desc: 
+    • Designed a general dynamic hybrid manipulation strategy for dynamic grasping.
+    • Designed specific unprecedented non-prehensile manipulation based on UR16e, including fast dynamical grasping mechanism.
+    • Customized double inverted pendulum model-based algorithm (MATLAB) to guide the motion planning of UR16e.
+    • Controlled a real UR16e with C++.
 
 - name: Rough Terrain Ground Vehicle Control
   i18n: cpython
