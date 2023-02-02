@@ -30,6 +30,7 @@
                   </h4>
                   {% for item in project.desc %}
                         <p><span data-i18n="projects.{{ project.i18n }}">{{ item }}</span></p>
+                  {% endfor %}
                   {% if project.repo %}
                   <div user="{{ project.gh_user }}" repo="{{ project.repo }}" class="ghbtn">
                       <a target="_blank" style="width: 65px;" href="https://github.com/{{ project.gh_user }}/{{ project.repo }}/stargazers" class="btn btn-white btn-xs star"><i class="fa fa-star"></i> ...</a>&emsp;&emsp;
