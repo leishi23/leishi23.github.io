@@ -28,7 +28,7 @@ author:  # change following line to your infomation.
   skill_icon2:
     - name: fa-linux
     - name: icon-apache
-  desc: One day, I want to make a difference in our daily life with my knowledge as a passionate researcher. Even a little difference is the fantastic realization of my life's ultimate meaning..  # Describe yourself.
+  desc: One day, I want to make a difference in our daily life with my knowledge as a passionate researcher. Even a little difference is the fantastic realization of my life's ultimate meaning.  # Describe yourself.
 
 # comment
 disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
