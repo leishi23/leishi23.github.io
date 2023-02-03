@@ -13,7 +13,7 @@
     detail: Stubborn stone
     i18n: company_a_job
   icon: fa-grav
-  present: true
+#   present: true
 
 - name:
     detail: Shandong University
@@ -28,7 +28,7 @@
     detail: Undergraduate
     i18n: company_b_job
   icon: fa-car
-  present: true
+#   present: true
   
 - name:
     detail: Johns Hopkins University
