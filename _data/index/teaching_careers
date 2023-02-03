@@ -1,0 +1,16 @@
+# careers section data
+# if you don't have language feature(language.yml is empty), ignore "i18n" items
+- name:
+    detail: Johns Hopkins University
+    i18n: High School
+  desc:
+    detail: Introduction to Linear Systems and Theory
+    i18n: company_a_desc
+  date:
+    detail: Sept. 2022 ~ Dec. 2022
+    i18n: company_a_date
+  job:
+    detail: Teaching Assistant
+    i18n: company_a_job
+  icon: fa-linode
+  present: true
