@@ -1,18 +1,18 @@
 # links section data
 - last_name: Google
   first_name:
-  desc: CEO
+  desc: Senior Lecturer
   website: https://www.google.com
   email: ceo@google.com
 
 - last_name: CSDN
   first_name: 
-  desc: Support Jalpc
+  desc: Lecturer
   website: https://www.csdn.net/?spm=1000.2115.3001.4476
   email: cto@google.com
 
 - last_name: Github
   first_name: 
-  desc: COO
+  desc: Note
   website: https://github.com
   email: coo@google.com
