@@ -1,0 +1,31 @@
+# careers section data
+# if you don't have language feature(language.yml is empty), ignore "i18n" items
+- name:
+    detail: Tencent CO.LTD
+    i18n: High School
+  desc:
+    detail: Robot Dexterous Manipulation
+    i18n: company_a_desc
+  date:
+    detail: May. 2022 ~ Present
+    i18n: company_a_date
+  job:
+    detail: Research Intern
+    i18n: company_a_job
+  icon: fa-hand-pointer-o
+#   present: true
+
+- name:
+    detail: Johns Hopkins University
+    i18n: High School
+  desc:
+    detail: Rough Terrain vehicle Learning-based Control
+    i18n: company_a_desc
+  date:
+    detail: May. 2022 ~ Present
+    i18n: company_a_date
+  job:
+    detail: Research Assistant
+    i18n: company_a_job
+  icon: fa-bus
+  present: true
