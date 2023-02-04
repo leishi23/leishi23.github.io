@@ -1,0 +1,6 @@
+---
+layout: blog
+title: Kinematics & Dynamics
+permalink: /k&d/
+---
+{% include category.html %}
