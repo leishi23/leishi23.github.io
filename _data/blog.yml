@@ -10,13 +10,13 @@
   href: /linux/
 
 - name: Control 
-  href: /html/
+  href: /control/
 
 - name: Motion Planning
-  href: /database/
+  href: /mp/
 
 - name: Machine Learning
-  href: /mac/
+  href: /ml/
 
 - name: Life
   href: /life/
