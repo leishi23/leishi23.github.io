@@ -4,7 +4,7 @@ title:  "Hello World Program in C (Day 02_1)"
 date:   2023-02-19
 desc: "Intermediate Programming Course Day 02_1"
 keywords: "C++"
-categories: [HTML]
+categories: [C++]
 tags: [C++]
 icon: icon-html
 ---
