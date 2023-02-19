@@ -3,9 +3,9 @@ layout: post
 title:  "Hello World Program in C (Day 02_1)"
 date:   2023-02-19
 desc: "Intermediate Programming Course Day 02_1"
-keywords: "C++"
+keywords: "C"
 categories: [C++]
-tags: [C++]
+tags: [Jalpc,Jekyll]
 icon: icon-html
 ---
 
