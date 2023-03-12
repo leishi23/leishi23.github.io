@@ -11,8 +11,8 @@
 - src: landing/wallhaven-kx98xd.jpg
   title: second banner image
 
-# - src: landing/b4.jpg
-#   title: third banner image
+- src: landing/b4.jpg
+  title: third banner image
 
 # - src: landing/b5.jpg
 #   title: forth banner image
