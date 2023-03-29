@@ -15,7 +15,7 @@
 - name: Rough Terrain Ground Vehicle Control
   i18n: cpython
   gh_user: python
-  repo: https://github.com/leishi23/CARLA_Simulation
+  repo: https://github.com/leishi23/Rough_terrain_vehicle_control
   img: /static/assets/img/landing/carla.jpg
   desc: 
     1: . Implemented algorithms from scratch on CARLA simulation to build a time-aligned dataset, including collecting, transforming and real-time plotting sensor data.
