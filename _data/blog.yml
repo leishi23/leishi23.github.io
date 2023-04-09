@@ -6,23 +6,23 @@
 - name: C++
   href: /c++/
 
-- name: Linux
-  href: /linux/
+# - name: Linux
+#   href: /linux/
 
-- name: Control 
-  href: /control/
+# - name: Control 
+#   href: /control/
 
-- name: Motion Planning
-  href: /motion Planning/
+# - name: Motion Planning
+#   href: /motion Planning/
 
-- name: Machine Learning
-  href: /machine learning/
+# - name: Machine Learning
+#   href: /machine learning/
   
-- name: Kinematics & Dynamics 
-  href: /kinematics & dynamics/
+# - name: Kinematics & Dynamics 
+#   href: /kinematics & dynamics/
   
-- name: Math
-  href: /math/
+# - name: Math
+#   href: /math/
   
 - name: Life
   href: /life/
