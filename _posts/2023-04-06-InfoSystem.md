@@ -1,0 +1,78 @@
+---
+layout: post
+title:  "Project_InfoSystem"
+date:   2023-04-09
+desc: "Black horse online course"
+keywords: "C++"
+categories: [C++]
+tags: [C++]
+icon: icon-html
+---
+
+# Project_InfoSystem
+
+[![image](https://www.freeiconspng.com/thumbs/c-logo-icon/c--logo-icon-0.png)](https://www.bilibili.com/video/BV1et411b73Z?p=73&spm_id_from=pageDriver&vd_source=d8d0bffc8e5266c19ad61d5b6c71609e)
+
+```cpp
+# include <iostream>
+using namespace std;
+# include <string>
+# define MAX 1000
+
+void ShowMenu(){
+    cout << "1. Add contacts" << endl;
+    cout << "2. Show contacts" << endl;
+    cout << "3. Delete contacts" << endl;
+    cout << "4. Find contacts" << endl;
+    cout << "5. Change contacts" << endl;
+    cout << "6. Empty contacts" << endl;
+    cout << "0. Exis info-system" << endl;
+}
+
+int main(){
+
+    struct Person{
+        string m_Name;
+        int m_Sex;  // 1 male; 2 female
+        int m_Age;
+        string m_Phone;
+        string m_Addr;
+    };
+    
+    struct AddressBook{
+        struct Person personArr[MAX];
+        int m_Size;
+    };
+    
+    ShowMenu();
+    cin >> select;
+    
+    while (true){
+        switch (select){
+            case 1: // Add contacts
+                break;
+            case 2: // Show contacts
+                break;
+            case 3: // Delete contacts
+                break;
+            case 4: // Find contacts
+                break;
+            case 5: // Change contacts
+                break;
+            case 6: // Empty contacts
+                break;
+            case 0: // Exis info-system
+                cout << "See you!" << endl;
+                system('pause');    // Pause the system, and print “Press any key to continue...”
+                return 0;   // exit main function
+                break;
+            default:
+                break;
+        }
+    }
+    
+    system('pause');
+    return 0;   // exit main function
+}
+
+```
