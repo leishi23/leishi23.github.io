@@ -29,33 +29,152 @@ void ShowMenu(){
     cout << "0. Exis info-system" << endl;
 }
 
-int main(){
+void addPerson(AddressBook *abs){
+    // to test if abs's size equals to MAX
+    if (abs->m_Size == MAX){
+        cout << "AddressBook is full!" << endl;
+    }
+    else{
+        string name;
+        cout << "Please add a name:" << endl;
+        cin >> name;
+        abs->personArray[abs->m_Size].m_Name = name;
+        
+        int sex;
+        while (true){
+            cout << "Please enter the sex:" << endl;
+            cout << "1 -- Male:" << endl;
+            cout << "2 -- Female:" << endl;
+            cin >> sex;
+            if (sex == 1 || sex == 2){
+                abs->personArray[abs->m_Size].m_Sex = sex;
+                break;      // break when sex input is right 
+            }
+            cout << "Sex input is wrong, please try again" << endl;
+        }
 
-    struct Person{
-        string m_Name;
-        int m_Sex;  // 1 male; 2 female
-        int m_Age;
-        string m_Phone;
-        string m_Addr;
-    };
+        int age;
+        cout << "Please enter the age:" << endl;
+        cin >> age;
+        abs->personArray[abs->m_Size].m_Age = age;
+        
+        string phone;
+        cout << "Please enter the phone number:" << endl;
+        cin >> phone;
+        abs->personArray[abs->m_Size].m_Phone = phone;
+        
+        string addr;
+        cout << "Please enter the address:" << endl;
+        cin >> addr;
+        abs->personArray[abs->m_Size].m_Addr = addr;
+        
+        abs->m_Size++;
+        cout << "Added successfully" << endl;
+        
+        system("pause");
+        system("cls");      // clear screen
+    }
+}
+
+void showContact(AddressBook *abs){
+    if (abs->m_Size == 0){
+        cout << "Address book is empty" << endl;
+    }
+    else{
+        for (int i=0; i<abs->m_Size; i++){
+            cout << "Name: " << abs->personArr[i].m_Name << "\t";   
+            //abs is pointer while abs->personArr[i] is not, so ->/.
+            cout << "Sex: " << (abs->personArr[i].m_Sex == 1 ? "Male":"Female") << "\t";
+            cout << "Age: " << abs->personArr[i].m_Age << "\t";
+            cout << "Phone: " << abs->personArr[i].m_Phone << "\t";
+            cout << "Address: " << abs->personArr[i].m_Addr << endl;
+        }
+    }
+    system("pause");
+    system("cls");
+}
+
+int verifyContact(AddressBook *abs, string name){
+    for (int i=0; i<abs->m_Size; i++){
+        if (abs->personArr[i].m_Name == name){
+            return i;
+        }
+    }
+    return -1;
+}
+
+void deletePerson(AddressBook *abs){
+    cout << "Please enter the person you want to delete" << endl;
+    string name;
+    cin >> name;
+    int ret = verifyContact(abs, name);
+    if (ret != -1){
+        for (int i=0; i<abs->m_Size; i++){
+            abs->personArr[i] = abs->personArr[i+1]
+        }
+        abs->m_Size--;
+        cout << "Found and deleted" << endl;
+    }
+    else {
+        cout << "This person not exist" << endl;
+    }
+}
+
+void findPerson(AddressBook *abs){
+    cout << "Please the person you want to find" << endl;
+    string name;
+    cin >> name;
+    int ret = verifyContact(abs, name);
+    if (ret != -1){
+        cout << "Name: " << abs->personArr[ret].m_Name << "\t";
+        cout << "Sex: " << abs->personArr[ret].m_Sex << "\t";
+        cout << "Age: " << abs->personArr[ret].m_Age << "\t";
+        cout << "Phone: " << abs->personArr[ret].m_Phone << "\t";
+        cout << "Address: " << abs->personArr[ret].m_Addr << endl;
+    }
+    else{
+        cout << "Nobody found" << endl;
+    }
+    system("pause");
+    system("cls");
+}
+
+struct Person{
+    string m_Name;
+    int m_Sex;  // 1 male; 2 female
+    int m_Age;
+    string m_Phone;
+    string m_Addr;
+};
+
+struct AddressBook{
+    struct Person personArr[MAX];
+    int m_Size;
+};
+
+int main(){
     
-    struct AddressBook{
-        struct Person personArr[MAX];
-        int m_Size;
-    };
-    
-    ShowMenu();
+    AddressBook abs;
+    abs.m_Size = 0;
+
+    int select = 0;
     cin >> select;
     
     while (true){
+        ShowMenu();
+        
         switch (select){
             case 1: // Add contacts
+                addPerson(&abs);        // address pass to modify value
                 break;
             case 2: // Show contacts
+                showContact(&abs);
                 break;
             case 3: // Delete contacts
+                deletePerson(&abs);
                 break;
             case 4: // Find contacts
+                findPerson(&abs);
                 break;
             case 5: // Change contacts
                 break;
