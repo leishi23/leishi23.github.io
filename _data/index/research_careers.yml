@@ -22,10 +22,10 @@
     detail: Rough Terrain vehicle Learning-based Control
     i18n: company_a_desc
   date:
-    detail: May. 2022 ~ Present
+    detail: May. 2022 ~ March. 2023
     i18n: company_a_date
   job:
     detail: Research Assistant
     i18n: company_a_job
   icon: fa-bus
-  present: true
+#   present: true
