@@ -121,7 +121,7 @@ void deletePerson(AddressBook *abs){
 }
 
 void findPerson(AddressBook *abs){
-    cout << "Please the person you want to find" << endl;
+    cout << "Please enter the person you want to find" << endl;
     string name;
     cin >> name;
     int ret = verifyContact(abs, name);
@@ -134,6 +134,55 @@ void findPerson(AddressBook *abs){
     }
     else{
         cout << "Nobody found" << endl;
+    }
+    system("pause");
+    system("cls");
+}
+
+void modifyPerson(Addressbooks * abs){
+    cout << " Enter the person you want to modify" <<endl;
+    string name;
+    cin >> name;
+    int ret = isExist(abs, name);
+    
+    if (ret != -1){
+        string name;
+        cout << "Enter name: " << endl;
+        cin >> name;
+        abs->personArray[ret].m_Name = name;
+        
+        cout << "Enter sex:" << endl;
+        cout <<"1 ---- Male" << endl;
+        cout <<"2 ---- Female" << endl;
+        int sex = 0;
+        cin >> sex;
+        while (true){
+            if (sex==1 || sex==2){
+                abs->personArray[ret].m_Sex = sex;
+                break;
+            }
+            cout << "Sex entered is wrong, please try again" << endl;
+        }
+        
+        cout << "Enter age:" << endl;
+        int age = 0;
+        cin >> age;
+        abs->personArray[ret].m_Age = age;
+        
+        cout << "Enter contact phone:" << endl;
+        string phone;
+        cin >> phone;
+        abs->personArray[ret].m_Phone = phone;
+        
+        cout << "Enter home address: " << endl;
+        string address;
+        cin >> address;
+        abs->personArray[ret].m_Addr = address;
+        
+        cout << "Modified successfully" << endl;
+    }
+    else{
+        cout << "No one found" << endl;
     }
     system("pause");
     system("cls");
