@@ -189,6 +189,7 @@ void modifyPerson(Addressbooks * abs){
 }
 
 void cleanPerson(Addressbooks * abs){
+    // logical empty
     abs->m_Size = 0; // Set current contact number 0
     cout << "Addressbook is already emptied." << endl;
     system("pause");
