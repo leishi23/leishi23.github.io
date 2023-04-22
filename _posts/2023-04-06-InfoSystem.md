@@ -188,6 +188,13 @@ void modifyPerson(Addressbooks * abs){
     system("cls");
 }
 
+void cleanPerson(Addressbooks * abs){
+    abs->m_Size = 0; // Set current contact number 0
+    cout << "Addressbook is already emptied." << endl;
+    system("pause");
+    system("cls");
+}
+
 struct Person{
     string m_Name;
     int m_Sex;  // 1 male; 2 female
