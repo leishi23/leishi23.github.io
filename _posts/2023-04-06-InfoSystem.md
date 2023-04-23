@@ -15,6 +15,7 @@ icon: icon-html
 
 ```cpp
 # include <iostream>
+#include <stdio.h>
 using namespace std;
 # include <string>
 # define MAX 1000
@@ -82,12 +83,12 @@ void showContact(AddressBook *abs){
     }
     else{
         for (int i=0; i<abs->m_Size; i++){
-            cout << "Name: " << abs->personArr[i].m_Name << "\t";   
-            //abs is pointer while abs->personArr[i] is not, so ->/.
-            cout << "Sex: " << (abs->personArr[i].m_Sex == 1 ? "Male":"Female") << "\t";
-            cout << "Age: " << abs->personArr[i].m_Age << "\t";
-            cout << "Phone: " << abs->personArr[i].m_Phone << "\t";
-            cout << "Address: " << abs->personArr[i].m_Addr << endl;
+            cout << "Name: " << abs->personArray[i].m_Name << "\t";   
+            //abs is pointer while abs->personArray[i] is not, so ->/.
+            cout << "Sex: " << (abs->personArray[i].m_Sex == 1 ? "Male":"Female") << "\t";
+            cout << "Age: " << abs->personArray[i].m_Age << "\t";
+            cout << "Phone: " << abs->personArray[i].m_Phone << "\t";
+            cout << "Address: " << abs->personArray[i].m_Addr << endl;
         }
     }
     system("pause");
@@ -96,7 +97,7 @@ void showContact(AddressBook *abs){
 
 int verifyContact(AddressBook *abs, string name){
     for (int i=0; i<abs->m_Size; i++){
-        if (abs->personArr[i].m_Name == name){
+        if (abs->personArray[i].m_Name == name){
             return i;
         }
     }
@@ -110,7 +111,7 @@ void deletePerson(AddressBook *abs){
     int ret = verifyContact(abs, name);
     if (ret != -1){
         for (int i=0; i<abs->m_Size; i++){
-            abs->personArr[i] = abs->personArr[i+1]
+            abs->personArray[i] = abs->personArray[i+1]
         }
         abs->m_Size--;
         cout << "Found and deleted" << endl;
@@ -126,11 +127,11 @@ void findPerson(AddressBook *abs){
     cin >> name;
     int ret = verifyContact(abs, name);
     if (ret != -1){
-        cout << "Name: " << abs->personArr[ret].m_Name << "\t";
-        cout << "Sex: " << abs->personArr[ret].m_Sex << "\t";
-        cout << "Age: " << abs->personArr[ret].m_Age << "\t";
-        cout << "Phone: " << abs->personArr[ret].m_Phone << "\t";
-        cout << "Address: " << abs->personArr[ret].m_Addr << endl;
+        cout << "Name: " << abs->personArray[ret].m_Name << "\t";
+        cout << "Sex: " << abs->personArray[ret].m_Sex << "\t";
+        cout << "Age: " << abs->personArray[ret].m_Age << "\t";
+        cout << "Phone: " << abs->personArray[ret].m_Phone << "\t";
+        cout << "Address: " << abs->personArray[ret].m_Addr << endl;
     }
     else{
         cout << "Nobody found" << endl;
@@ -139,7 +140,7 @@ void findPerson(AddressBook *abs){
     system("cls");
 }
 
-void modifyPerson(Addressbooks * abs){
+void modifyPerson(AddressBook * abs){
     cout << " Enter the person you want to modify" <<endl;
     string name;
     cin >> name;
@@ -188,7 +189,7 @@ void modifyPerson(Addressbooks * abs){
     system("cls");
 }
 
-void cleanPerson(Addressbooks * abs){
+void cleanPerson(AddressBook * abs){
     // logical empty
     abs->m_Size = 0; // Set current contact number 0
     cout << "Addressbook is already emptied." << endl;
@@ -205,7 +206,7 @@ struct Person{
 };
 
 struct AddressBook{
-    struct Person personArr[MAX];
+    struct Person personArray[MAX];
     int m_Size;
 };
 
