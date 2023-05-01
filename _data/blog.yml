@@ -7,13 +7,13 @@
   href: /c++/
   
   - name: ROS
-  href: /ROS/
+  href: /ros/
 
 - name: Linux
   href: /linux/
 
 - name: Motion Planning
-  href: /motion Planning/
+  href: /motion planning/
 
 # - name: Machine Learning
 #   href: /machine learning/
