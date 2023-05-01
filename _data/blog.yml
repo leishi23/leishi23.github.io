@@ -5,21 +5,21 @@
 # edit following lines to custom your blog page, make sure name is the same as href but capitalized first letter(except HTML)
 - name: C++
   href: /c++/
+  
+  - name: ROS
+  href: /ROS/
 
-# - name: Linux
-#   href: /linux/
+- name: Linux
+  href: /linux/
 
-# - name: Control 
-#   href: /control/
-
-# - name: Motion Planning
-#   href: /motion Planning/
+- name: Motion Planning
+  href: /motion Planning/
 
 # - name: Machine Learning
 #   href: /machine learning/
   
-# - name: Kinematics & Dynamics 
-#   href: /kinematics & dynamics/
+- name: Control & Dynamics 
+  href: /Control & dynamics/
   
 # - name: Math
 #   href: /math/
