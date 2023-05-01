@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "C ++ program memory division"
+title:  "C ++ Program Memory Division"
 date:   2023-04-30
-desc: "C ++ program memory division"
+desc: "C ++ Program Memory Division"
 keywords: "C++"
 categories: [C++]
 tags: [C++]
