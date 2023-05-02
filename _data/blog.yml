@@ -6,19 +6,19 @@
 - name: C++
   href: /c++/
   
-- name: ROS
+- name: Ros
   href: /ros/
 
 - name: Linux
   href: /linux/
 
-- name: Motion Planning
+- name: Motion planning
   href: /motion planning/
 
-# - name: Machine Learning
+# - name: Machine learning
 #   href: /machine learning/
   
-- name: Control & Dynamics 
+- name: Control & dynamics 
   href: /control & dynamics/
   
 # - name: Math
