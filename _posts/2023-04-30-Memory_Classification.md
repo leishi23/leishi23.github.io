@@ -22,10 +22,12 @@ icon: icon-html
 ## Memory division classfication
 ![image](https://th.bing.com/th/id/R.1a1dbbe8b343484a55f3ff386b9cb48a?rik=XWO3jGPhFp1E4A&pid=ImgRaw&r=0)
 - Significance: to bring different life cycle for different division, for dexterous programming.
+  
 ### **Text/Code** division
 - Store the binary code of the correspondence, managed by the operating system. Assigned before program execution.
 - Shared: for frequently run code, it's sufficient to store only once.
 - Only readable: not changable.
+  
 ### **Global** division
 - Store global variables and static variables and constants. Assigned before program execution.
 - Global variable: out of main function.
