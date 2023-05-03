@@ -3,7 +3,7 @@ layout: post
 title:  "Reference"
 date:   2023-05-03
 desc: "Reference in C++"
-keywords: "C"
+keywords: "C++"
 categories: [C++]
 tags: [C++]
 icon: icon-html
