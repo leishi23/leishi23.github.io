@@ -308,7 +308,8 @@ icon: icon-html
     }
     ```
 
-    - Example: Point and circle 
+- Example: Point and circle 
+
     ```cpp
     # include <iostream>
     using namespace std;
@@ -375,7 +376,7 @@ icon: icon-html
         if distance == c1.getR(){
             cout << "Point is on the circle" << endl;
         }
-        elif distance > c1.getR(){
+        else if distance > c1.getR(){
             cout << "Point is outside of the circle" << endl;
         }
         else{
@@ -385,6 +386,7 @@ icon: icon-html
     ```
 
 ## How to split class into .h and .cpp files
+- Example: Point
     ```cpp
     // Point.h
     # program once // prevent multiple inclusions
