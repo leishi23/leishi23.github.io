@@ -383,39 +383,39 @@ int main(){
     ```
 
 ## How to split class into .h and .cpp files
-    ```cpp
-    // Point.h
-    # program once // prevent multiple inclusions
-    # include <iostream>
-    using namespace std;
+```cpp
+// Point.h
+# program once // prevent multiple inclusions
+# include <iostream>
+using namespace std;
 
-    class Point{
-        public:
-            void setX(int x);
-            int getX();
+class Point{
+public:
+    void setX(int x);
+    int getX();
 
-            void setY(int y);
-            int getY();
+    void setY(int y);
+    int getY();
 
-        private:
-            int m_X;
-            int m_Y;
-    };
+private:
+    int m_X;
+    int m_Y;
+};
 
-    // Point.cpp
-    # include "Point.h" // include the header file
-    void Point::setX(int x){    // Point:: is the scope resolution operator
-        m_X = x;
-    }
-    int Point::getX(){
-        return m_X;
-    }
+// Point.cpp
+# include "Point.h" // include the header file
+void Point::setX(int x){    // Point:: is the scope resolution operator
+    m_X = x;
+}
+int Point::getX(){
+    return m_X;
+}
 
-    void Point::setY(int y){
-        m_Y = y;
-    }
-    int Point::getY(){
-        return m_Y;
-    }
+void Point::setY(int y){
+    m_Y = y;
+}
+int Point::getY(){
+    return m_Y;
+}
 
-    ```
+```
