@@ -15,10 +15,12 @@ icon: icon-html
 
 > **_Keypoints:_**
 - Significance of encapsulation
-- Examples
+- Examples of encapsulation
 - Access specifier
 - Difference between struct and class
 - Set member function
+- Examples of set member function
+- How to split class into .h and .cpp files
 
 ## Significance of encapsulation
 - Encapsulation is the process of combining data and functions into a single unit called class.
@@ -215,6 +217,7 @@ int main(){
         return 0;
     }
 
+## Examples of set member function
 - Example: Cube
     ```cpp
     # include <iostream>
@@ -379,7 +382,7 @@ int main(){
     }
     ```
 
-    - How to split class into .h and .cpp files
+## How to split class into .h and .cpp files
     ```cpp
     // Point.h
     # program once // prevent multiple inclusions
