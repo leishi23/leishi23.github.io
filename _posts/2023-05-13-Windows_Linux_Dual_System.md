@@ -1,15 +1,15 @@
 ---
 layout: post
-title:  "Win10/Ubuntu 18双系统安装/卸载"
+title:  "Win10/Ubuntu18 双系统安装/卸载"
 date:   2023-05-13
-desc: "Win10/Ubuntu 18双系统安装/卸载"
+desc: "Win10/Ubuntu18 双系统安装/卸载"
 keywords: "Linux"
 categories: [Linux]
 tags: [Linux]
 icon: icon-html
 ---
 
-# Win10/Ubuntu 18双系统安装/卸载
+# Win10/Ubuntu18 双系统安装/卸载
 ## _Linux_DebugNotes_01_
 
 [![image](https://fossbytes.com/wp-content/uploads/2020/02/Ubuntu-18.04.4-release.jpg)](https://releases.ubuntu.com/18.04/)
