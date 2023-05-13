@@ -1,44 +1,76 @@
 ---
 layout: post
-title:  "双系统开机引导修复（Grub界面）"
+title:  "Linux Useful Commands"
 date:   2023-05-13
-desc: "双系统开机引导修复（Grub）"
+desc: "Linux Useful Commands"
 keywords: "Linux"
 categories: [Linux]
 tags: [Linux]
 icon: icon-html
 ---
 
-# 双系统开机引导修复（Grub）
-## _Linux_DebugNotes_02_
+# Linux Useful Commands
+## _Linux_DebugNotes_03_
 
 [![image](https://fossbytes.com/wp-content/uploads/2020/02/Ubuntu-18.04.4-release.jpg)](https://releases.ubuntu.com/18.04/)
 
-## Keypoints 
+- `sudo`: Super User Do
+  - `sudo -i`: Switch to root user
 
-- Repair in Grub interface
-- Repair in Windows 10
+- `apt-get`: Advanced Packaging Tool
+  - `sudo apt-get update`: Update software list
+  - `sudo apt-get upgrade`: Upgrade software
+  - `sudo apt-get install <package>`: Install package
+  - `sudo apt-get remove <package>`: Remove package
+  - `sudo apt-get autoremove`: Remove unused packages
+  - `sudo apt-get clean`: Clean cache
+  - `sudo apt-get autoclean`: Clean cache and unused packages
+  - `sudo apt-get purge <package>`: Remove package and configuration files
 
-## Repair in Grub interface
-- Repair grub
-```bash
-grub> ls # you can see the partitions of your hard disk, such as (hd0) (hd0,msdos1) (hd0,msdos2) (hd0,msdos3) (hd0,msdos4)
+- `dpkg`: Debian Package
+  - `sudo dpkg -i <package>`: Install package
+  - `sudo dpkg -r <package>`: Remove package
 
-grub> ls (hd0,msdos1)/ # to find the partition where the grub files are located, such as (hd0,msdos1)/boot/grub. If you can't find it, try other partitions. If you can't find it, you can only repair it in Windows 10
+- File manipulation:
+  - `ls`: List files
+    - `ls -a`: List all files including hidden files
+    - `ls -l`: List files in detail
+  
+  - `cd`: Change directory
+    - `cd ..`: Go to parent directory
+    - `cd ~`: Go to home directory
+    - `cd -`: Go to previous directory
+  - `pwd`: Print working directory
+  - `mkdir`: Make directory
+    - Syntax: `mkdir dir1 dir2 dir3`
+  - `touch`: Create file
+    - Syntax: `touch file1 file2 file3`
+  - `cp`: Copy file
+    - `cp -r`: Copy directory
+    - syntax: `cp <source> <destination>`
+  - `mv`: Move file
+    - `mv -r`: Move directory
+    - `mv <old_name> <new_name>`: Rename file
+    - `mv <file> <directory>`: Move file to directory
+  - `rm`: Remove file
+    - `rm -r`: Remove directory
+    - `rm -f`: Force remove
+    - `rm -rf`: Force remove directory
 
-grub> set root=(hd0,msdos1) # set the partition where the grub files are located
-grub> set prefix=(hd0,msdos1)/boot/grub # set the path of grub files
-grub> insmod normal # load normal module
-grub> normal # enter normal mode
-```
+- `chmod`: Change mode
+  - `chmod 777 <file>`: Give all permissions to file
 
-- Update grub
-```bash
-sudo update-grub
-sudo grub-install /dev/sda
-```
+- `&&`: Logical AND
+  - `command1 && command2`: Execute command2 if command1 is successful
 
-## Repair in Windows 10
-- To enter Windows 10 when starting the computer, press `F12` to enter BIOS, select `Windows Boot Manager` to enter Windows 10
-- Repair in Windows 10: Just delete the Ubuntu partition and then delete the Ubuntu folder in the EFI partition
-- Other methods can be found on the Internet. I haven't tried it. I don't know if it works. 
+- `-y`: Yes
+  - `sudo apt-get install -y <package>`: Install package without asking
+
+- `|`: Pipe
+  - `command1 | command2`: Pipe the output of command1 to command2
+
+- `grep`: Global Regular Expression Print
+  - `ls -l | grep <pattern>`: Search for pattern in output of ls -l
+
+
+Strongly recommend the **Missing Semester** course from MIT. It is a very good course for learning Linux and shell [Link](https://missing.csail.mit.edu/). My notes for this course can be found [here](https://github.com/leishi23/Missing_Learning_Notes/tree/main). 
