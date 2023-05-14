@@ -1,15 +1,15 @@
 ---
 layout: post
-title:  "Encapsulation"
+title:  "Encapsulation and Class"
 date:   2023-05-06
-desc: "Encapsulation in C++"
+desc: "Encapsulation and class in C++"
 keywords: "C"
 categories: [C++]
 tags: [C++]
 icon: icon-html
 ---
 
-# Encapsulation in C++
+# Encapsulation and class in C++
 
 [![image](https://www.freeiconspng.com/thumbs/c-logo-icon/c--logo-icon-0.png)](https://www.bilibili.com/video/BV1et411b73Z?p=99)
 
