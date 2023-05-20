@@ -20,7 +20,12 @@
         <!-- avatar -->
         <div class="col-xs-4">
             <div class="team-member wow zoomIn">
-                <img src="{{ site.author.avatar | prepend: site.baseurl }}" class="img-responsive img-circle" alt="">
+                <img src="{{ site.author.avatar | prepend: site.baseurl }}" ;
+                     display: block;
+                      margin-left: auto;
+                      margin-right: auto;
+                      max-width: 100%;
+                      width: auto;>
                 <h2><span class="navy">{{ site.author.first_name }}</span> {{ site.author.last_name }}</h2>
                 <p><span class="navy">{{ "Robotics" }}</span> {{ "Engineer" }}</p>
                 <ul class="list-inline social-icon">
