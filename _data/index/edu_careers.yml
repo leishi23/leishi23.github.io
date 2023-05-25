@@ -43,3 +43,18 @@
     detail: Master Student
     i18n: company_b_job
   icon: fa-cogs
+
+  - name:
+    detail: University of Wisconsin-Madison
+    i18n: company_b
+  desc:
+    detail: TBD.
+    i18n: company_b_desc
+  date:
+    detail: Sept. 2023 ~ TBD
+    i18n: company_b_date
+  job:
+    detail: PhD Student
+    i18n: company_b_job
+  icon: fa-cogs
+  present: true
