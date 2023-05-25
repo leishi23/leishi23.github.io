@@ -29,7 +29,7 @@
     i18n: company_b_job
   icon: fa-car
 #   present: true
-  
+
 - name:
     detail: Johns Hopkins University
     i18n: company_b
@@ -43,8 +43,9 @@
     detail: Master Student
     i18n: company_b_job
   icon: fa-cogs
+#   present: true
 
-  - name:
+- name:
     detail: University of Wisconsin-Madison
     i18n: company_b
   desc:
