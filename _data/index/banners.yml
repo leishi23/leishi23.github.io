@@ -5,8 +5,8 @@
 # - src: landing/b5.gif
 #   title: first banner image
 
-- src: landing/header_two.jpg
-  title: first banner image
+# - src: landing/header_two.jpg
+#   title: first banner image
 
 - src: landing/wallhaven-kx98xd.jpg
   title: second banner image
