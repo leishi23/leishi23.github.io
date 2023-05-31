@@ -305,36 +305,37 @@ C --> D
   - The shared base class is inherited virtually, and the derived class will only have one copy of the base class. So, the value is determined by the last call.
   - Use virtual base pointer and virtual base table.
 
-```cpp
-#include <iostream>
-using namespace std;
+    ```cpp
+    #include <iostream>
+    using namespace std;
 
-class Base_class {
-public:
-    int m_A;
-};
+    class Base_class {
+    public:
+        int m_A;
+    };
 
-class Derived_class_1 :virtual public Base_class {
-public:
-    int m_B;
-};
+    class Derived_class_1 :virtual public Base_class {
+    public:
+        int m_B;
+    };
 
-class Derived_class_2 :virtual public Base_class {
-public:
-    int m_C;
-};
+    class Derived_class_2 :virtual public Base_class {
+    public:
+        int m_C;
+    };
 
-class Derived_class_3 : public Derived_class_1, public Derived_class_2 {
-public:
-    int m_D;
-};
+    class Derived_class_3 : public Derived_class_1, public Derived_class_2 {
+    public:
+        int m_D;
+    };
 
-void test01(){
-    Derived_class_3 son;
-    // son.m_A = 100; // Ambiguity unless virtual inheritance, error!
-    son.Derived_class_1::m_A = 100; // Specify the base class, m_A is shared by the two base classes
-    son.Derived_class_2::m_A = 200; // Specify the base class
-    cout << "son.Derived_class_1::m_A = " << son.Derived_class_1::m_A << endl; // 200
-    cout << "son.Derived_class_2::m_A = " << son.Derived_class_2::m_A << endl; // 200
-    cout << "son.m_A = " << son.m_A << endl; // 200
-}
+    void test01(){
+        Derived_class_3 son;
+        // son.m_A = 100; // Ambiguity unless virtual inheritance, error!
+        son.Derived_class_1::m_A = 100; // Specify the base class, m_A is shared by the two base classes
+        son.Derived_class_2::m_A = 200; // Specify the base class
+        cout << "son.Derived_class_1::m_A = " << son.Derived_class_1::m_A << endl; // 200
+        cout << "son.Derived_class_2::m_A = " << son.Derived_class_2::m_A << endl; // 200
+        cout << "son.m_A = " << son.m_A << endl; // 200
+    }
+    ```
