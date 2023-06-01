@@ -18,8 +18,8 @@
 - name: Linux
   href: /linux/
 
-- name: Motion planning
-  href: /motion planning/
+# - name: Motion planning
+#   href: /motion planning/
 
 # - name: Machine learning
 #   href: /machine learning/
