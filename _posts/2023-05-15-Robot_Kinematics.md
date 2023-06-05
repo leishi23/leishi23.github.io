@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Robot Kinematics"
-date:   2023-05-06
+date:   2023-06-05
 desc: "Robot Kinematics"
 keywords: "Control & dynamics"
 categories: [Control & dynamics]
@@ -96,22 +96,23 @@ $g(\vec{x}) = R\vec{x}$ for some $R \in SO(3)$.
   - Euler to rotation matries: $R_{rpy}(\alpha, \beta, \gamma) = R_z(\gamma)R_y(\beta)R_x(\alpha)$
       ```python
       # (roll, pitch ,yaw）转换为3*3旋转矩阵
-      def euler2rotm(self, euler):
-        R_x = np.array([[1, 0, 0],
-                        [0, np.cos(euler[0]), -np.sin(euler[0])],
-                        [0, np.sin(euler[0]), np.cos(euler[0])]
-                        ])
-        R_y = np.array([[np.cos(euler[1]), 0, np.sin(euler[1])],
-                        [0, 1, 0],
-                        [-np.sin(euler[1]), 0, np.cos(euler[1])]
-                        ])
-        R_z = np.array([[np.cos(euler[2]), -np.sin(euler[2]), 0],
-                        [np.sin(euler[2]), np.cos(euler[2]), 0],
-                        [0, 0, 1]
-                        ])
-        R = np.dot(R_z, np.dot(R_y, R_x))
-        return R
-        ```
+        def euler2rotm(self, euler):
+          R_x = np.array([[1, 0, 0],
+                          [0, np.cos(euler[0]), -np.sin(euler[0])],
+                          [0, np.sin(euler[0]), np.cos(euler[0])]
+                          ])
+          R_y = np.array([[np.cos(euler[1]), 0, np.sin(euler[1])],
+                          [0, 1, 0],
+                          [-np.sin(euler[1]), 0, np.cos(euler[1])]
+                          ])
+          R_z = np.array([[np.cos(euler[2]), -np.sin(euler[2]), 0],
+                          [np.sin(euler[2]), np.cos(euler[2]), 0],
+                          [0, 0, 1]
+                          ])
+          R = np.dot(R_z, np.dot(R_y, R_x))
+          return R
+      ```
+        
   - Rotation matrices to Euler: $[\alpha, \beta, \gamma]^T = [atan2(r_{32}, r_{33}), atan2(-r_{31}, \sqrt{r_{11}^2 + r_{21}^2}), atan2(r_{21}, r_{11})]^T$
       ```python
       # 旋转矩阵转换为欧拉角：roll, pitch, yaw
