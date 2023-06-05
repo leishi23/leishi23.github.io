@@ -37,7 +37,7 @@ $g(\vec{x}) = \vec{x} + \vec{t}$ for some $\vec{t} \in \mathbb{R}^3$
 ## Rotation
 $g(\vec{x}) = R\vec{x}$ for some $R \in SO(3)$.
 
-- SO(3) is special orthogonal group, i.e. SO(3) = $\{R \in \mathbb{R}^{3 \times 3} | R^TR = I det(R) = 1 \}$ 
+- SO(3) is special orthogonal group, i.e. SO(3) = $\{R \in \mathbb{R}^{3 \times 3} R^TR = I det(R) = 1\}$ 
   - $\lVert R\vec{p} - R\vec{q} \rVert = \lVert R(\vec{p}-\vec{q}) \rVert = \sqrt{[R(\vec{p}-\vec{q})]^TR(\vec{p}-\vec{q})} = \sqrt{(\vec{p}-\vec{q})^TR^TR(\vec{p}-\vec{q})} = \sqrt{(\vec{p}-\vec{q})^T(\vec{p}-\vec{q})} = \lVert\vec{p}-\vec{q}\rVert$
 - Rotation about the $x$-axis by $\theta$: $R_x(\theta) = \\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & cos(\theta) & -sin(\theta) \\\\ 0 & sin(\theta) & cos(\theta) \\end{bmatrix}$  
 - Rotation about the $y$-axis by $\theta$: $R_y(\theta) = \\begin{bmatrix} cos(\theta) & 0 & sin(\theta) \\\\ 0 & 1 & 0 \\\\ -sin(\theta) & 0 & cos(\theta) \\end{bmatrix}$
@@ -160,7 +160,7 @@ $g(\vec{x}) = R\vec{x} + \vec{p}$ for some $R \in SO(3)$ and $\vec{p} \in \mathb
 - First translate, then rotate. Otherwise, the translation will be rotated as well. 
 - $\vec{v_b} = R_{ab}\vec{v_b}$, where $R_{ab}$ is the rotation matrix from frame $a$ to frame $b$
 - $\vec{p_b} = \vec{p_a} + \vec{p_{ab}}$, where $\vec{p_{ab}}$ is the position vector of frame $b$ in frame $a$
-- Special Euclidean Group: SE(3) = $\{(\vec{p}, R) | \vec{p} \in \mathbb{R}^3, R \in SO(3)\}$
+- Special Euclidean Group: SE(3) = $\{(\vec{p}, R) \vec{p} \in \mathbb{R}^3, R \in SO(3)\}$
 - $g_1(g_2(\vec(q))) = g_1(\vec{p_2} + R_2\vec{q}) = \vec{p_1} + R_1(\vec{p_2} + R_2\vec{q}) = (\vec{p_1} + R_1\vec{p_2}) + (R_1R_2)\vec{q} = g_1g_2(\vec{q})$, so $g_1 \circ g_2 = (\vec{p_1} + R_1\vec{p_2}, R_1R_2)$
 - $g^{-1}(\vec{q}) = g^{-1}(\vec{p} + R\vec{q}) = R^T(\vec{q} - \vec{p}) = (R^T\vec{q} - R^T\vec{p}, R^T)$, so $g^{-1} = (-R^T\vec{p}, R^T)$
 
