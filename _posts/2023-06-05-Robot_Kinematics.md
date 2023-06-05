@@ -28,7 +28,7 @@ icon: icon-html
 - Rigid body motion: a motion of a rigid body in which particles of the body move through the same distances along parallel lines
 - Rigid body motion is a combination of translation and rotation
 - A mapping $g: \mathbb{R}^3 \rightarrow \mathbb{R}^3$ is a rigid body motion if and only iff:
-  - length is preserved: $\lVert g(\vec{x}) - g(\vec{y})|| = ||\vec{x} - \vec{y} \rVert$
+  - length is preserved: $\lVert g(\vec{x}) - g(\vec{y}) = \vec{x} - \vec{y} \rVert$
   - cross product/orientation is preserved: $g(\vec{x}) \times g(\vec{y}) = g(\vec{x} \times \vec{y})$ for all $\vec{x}, \vec{y} \in \mathbb{R}^3$
 
 ## Translation
