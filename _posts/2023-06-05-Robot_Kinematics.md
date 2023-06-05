@@ -28,7 +28,7 @@ icon: icon-html
 - Rigid body motion: a motion of a rigid body in which particles of the body move through the same distances along parallel lines
 - Rigid body motion is a combination of translation and rotation
 - A mapping $g: \mathbb{R}^3 \rightarrow \mathbb{R}^3$ is a rigid body motion if and only iff:
-  - length is preserved: $||g(\vec{x}) - g(\vec{y})|| = ||\vec{x} - \vec{y}||$
+  - length is preserved: $\lVert g(\vec{x}) - g(\vec{y})|| = ||\vec{x} - \vec{y} \rVert$
   - cross product/orientation is preserved: $g(\vec{x}) \times g(\vec{y}) = g(\vec{x} \times \vec{y})$ for all $\vec{x}, \vec{y} \in \mathbb{R}^3$
 
 ## Translation
@@ -37,12 +37,11 @@ $g(\vec{x}) = \vec{x} + \vec{t}$ for some $\vec{t} \in \mathbb{R}^3$
 ## Rotation
 $g(\vec{x}) = R\vec{x}$ for some $R \in SO(3)$.
 
-- _$SO(3)$ is special orthogonal group, i.e. $SO(3) = \{R \in \mathbb{R}^{3 \times 3} | R^TR = I, det(R) = 1\}$_
+- SO(3) is special orthogonal group, i.e. $SO(3) = \{R \in \mathbb{R}^{3 \times 3} | R^TR = I, det(R) = 1\}$
   - $\lVert R\vec{p} - R\vec{q} \rVert = \lVert R(\vec{p}-\vec{q}) \rVert = \sqrt{[R(\vec{p}-\vec{q})]^TR(\vec{p}-\vec{q})} = \sqrt{(\vec{p}-\vec{q})^TR^TR(\vec{p}-\vec{q})} = \sqrt{(\vec{p}-\vec{q})^T(\vec{p}-\vec{q})} = \lVert\vec{p}-\vec{q}\rVert$
-- Rotation about the $x$-axis by $\theta$: $R_x(\theta) = \begin{bmatrix} 1 & 0 & 0 \\ 0 & cos(\theta) & -sin(\theta) \\ 0 & sin(\theta) & cos(\theta) \end{bmatrix}$
-  
-- Rotation about the $y$-axis by $\theta$: $R_y(\theta) = \begin{bmatrix} cos(\theta) & 0 & sin(\theta) \\ 0 & 1 & 0 \\ -sin(\theta) & 0 & cos(\theta) \end{bmatrix}$
-- Rotation about the $z$-axis by $\theta$: $R_z(\theta) = \begin{bmatrix} cos(\theta) & -sin(\theta) & 0 \\ sin(\theta) & cos(\theta) & 0 \\ 0 & 0 & 1 \end{bmatrix}$
+- Rotation about the $x$-axis by $\theta$: $R_x(\theta) = \\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & cos(\theta) & -sin(\theta) \\\\ 0 & sin(\theta) & cos(\theta) \\end{bmatrix}$  
+- Rotation about the $y$-axis by $\theta$: $R_y(\theta) = \\begin{bmatrix} cos(\theta) & 0 & sin(\theta) \\\\ 0 & 1 & 0 \\\\ -sin(\theta) & 0 & cos(\theta) \\end{bmatrix}$
+- Rotation about the $z$-axis by $\theta$: $R_z(\theta) = \\begin{bmatrix} cos(\theta) & -sin(\theta) & 0 \\\\ sin(\theta) & cos(\theta) & 0 \\\\ 0 & 0 & 1 \\end{bmatrix}$
 - Rotation multiplication is not commutative: $R_x(\theta)R_y(\phi) \neq R_y(\phi)R_x(\theta)$
 - Rotation multiplication is associative: $R_x(\theta)(R_y(\phi)R_z(\psi)) = (R_x(\theta)R_y(\phi))R_z(\psi)$
 - Multi frames rotation: $R_{on} = R_{o1}R_{12}...R_{n-1,n}$
@@ -82,8 +81,8 @@ $g(\vec{x}) = R\vec{x}$ for some $R \in SO(3)$.
 
 - Exponential Coordinates for Rotation
   - If $\vec{v} = \frac{d\vec{q}}{d\vec{t}} = \dot{\vec{q}} = \vec{w} \times \vec{q} = \hat{w}\vec{q}$ where $\vec{w}$ is angular velocity, so $\vec{q}(t) = e^{\hat{w}t}\vec{q}(0)$
-    - $\hat{w} = \begin{bmatrix} 0 & -w_3 & w_2 \\ w_3 & 0 & -w_1 \\ -w_2 & w_1 & 0 \end{bmatrix}$ and $\hat{w}^2 = \vec{w}\vec{w}^T - \lVert w \rVert I$
-    - $e^{\hat{w}t} = e^{\frac{\hat{w}}{||\vec{w}||}||\vec{w}||t} = e^{\hat{n}\theta}$ where $||\vec{w}||t=\theta, \vec{n} = \frac{\vec{w}}{||\vec{w}||}$, _**$\vec{n}$ is asix of rotation, $\theta$ is angle of rotation.**_ Now let $\vec{n}$ be $\vec{w}$, so $e^{\hat{w}t} = e^{\hat{w}\theta}$. Left w is angular velocity, right w is axis of rotation. 
+    - $\hat{w} = \\begin{bmatrix} 0 & -w_3 & w_2 \\\\ w_3 & 0 & -w_1 \\\\ -w_2 & w_1 & 0 \\end{bmatrix}$ and $\hat{w}^2 = \vec{w}\vec{w}^T - \lVert w \rVert I$
+    - $e^{\hat{w}t} = e^{\frac{\hat{w}}{||\vec{w}||}||\vec{w}||t} = e^{\hat{n}\theta}$ where $||\vec{w}||t=\theta, \vec{n} = \frac{\vec{w}}{||\vec{w}||}$, **$\vec{n}$ is asix of rotation, $\theta$ is angle of rotation.** Now let $\vec{n}$ be $\vec{w}$, so $e^{\hat{w}t} = e^{\hat{w}\theta}$. Left w is angular velocity, right w is axis of rotation. 
     - ![image](https://www.meccanismocomplesso.org/wp-content/uploads/2020/09/Angoli-di-Eulero-due-sistemi-di-riferimento-1.jpg)
     - ![image](https://www.opengl-tutorial.org/assets/images/tuto-17-rotation/quaternion.png)
   - $R(\vec{w}, \theta) = e^{\hat{w}\theta} = I + sin(\theta)\hat{w} + (1-cos(\theta))\hat{w}^2$ where $\lVert \vec{w} \rVert = 1$
