@@ -37,7 +37,7 @@ $g(\vec{x}) = \vec{x} + \vec{t}$ for some $\vec{t} \in \mathbb{R}^3$
 ## Rotation
 $g(\vec{x}) = R\vec{x}$ for some $R \in SO(3)$.
 
-- SO(3) is special orthogonal group, i.e. $SO(3) = [R \in \mathbb{R}^{3 \times 3} | R^TR = I, det(R) = 1]$
+- SO(3) is special orthogonal group, i.e. $SO(3) = \{R \in \mathbb{R}^{3 \times 3} | R^TR = I, det(R) = 1 \}$
   - $\lVert R\vec{p} - R\vec{q} \rVert = \lVert R(\vec{p}-\vec{q}) \rVert = \sqrt{[R(\vec{p}-\vec{q})]^TR(\vec{p}-\vec{q})} = \sqrt{(\vec{p}-\vec{q})^TR^TR(\vec{p}-\vec{q})} = \sqrt{(\vec{p}-\vec{q})^T(\vec{p}-\vec{q})} = \lVert\vec{p}-\vec{q}\rVert$
 - Rotation about the $x$-axis by $\theta$: $R_x(\theta) = \\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & cos(\theta) & -sin(\theta) \\\\ 0 & sin(\theta) & cos(\theta) \\end{bmatrix}$  
 - Rotation about the $y$-axis by $\theta$: $R_y(\theta) = \\begin{bmatrix} cos(\theta) & 0 & sin(\theta) \\\\ 0 & 1 & 0 \\\\ -sin(\theta) & 0 & cos(\theta) \\end{bmatrix}$
