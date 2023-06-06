@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Robot Kinematics"
+title:  "Rigid Body Motion"
 date:   2023-06-05
-desc: "Robot Kinematics"
+desc: "Rigid Body Motion"
 keywords: "Control & dynamics"
 categories: [Control & dynamics]
 tags: [Control & dynamics]
