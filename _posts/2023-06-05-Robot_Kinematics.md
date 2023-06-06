@@ -170,7 +170,7 @@ $g(\vec{x}) = R\vec{x} + \vec{p}$ for some $R \in SO(3)$ and $\vec{p} \in \mathb
   - $\vec{v} = \vec{p} - \vec{q} = (x, y, z, 1)^T - (x', y', z', 1)^T = (x - x', y - y', z - z', 0)^T$
 - $g(\vec{q}) = R\vec{q} + \vec{p} = \\begin{bmatrix} R & \vec{p} \\\\ 0 & 1 \\end{bmatrix} \\begin{bmatrix} \vec{q} \\\\ 1 \\end{bmatrix}$, where $\\begin{bmatrix} R & \vec{p} \\\\ 0 & 1 \\end{bmatrix}$ is the homogeneous transformation matrix of $g \in SE(3)$
 - Too complicated to write here (including figure), refers to RDKDC notes page 74 blue-line box.
-  - The se(3) = $\left\{ \\begin{bmatrix} \hat{\omega} & \vec{v} \\\\ 0 & 0 \\end{bmatrix}|  \hat{\omega} \in so(3), \vec{v} \in \mathbb{R}^3 \right\}$ is the Lie algebra of SE(3).
+  - The se(3) = $\left\{ \\begin{bmatrix} \hat{\omega} & \vec{v} \\\\ 0 & 0 \\end{bmatrix}|  \hat{\omega} \in$ so(3), $\vec{v} \in \mathbb{R}^3 \right\}$ is the Lie algebra of SE(3).
   - Define $\hat{\xi} = \\begin{bmatrix} \hat{\omega} & \vec{v} \\\\ 0 & 0 \\end{bmatrix} \in \mathbb{R^{4\times4}}$ as <code style="color : Red">twist</code>. $\vec{\xi} = (\vec{v}, \vec{\omega})^T \in \mathbb{R}^6$ is twist coordinates of $\hat{\xi}$.
   - If $\vec{w}=\vec{0}$, then $\hat{\xi} = \\begin{bmatrix} 0 & \vec{v} \\\\ 0 & 0 \\end{bmatrix}$, then $e^{\hat{\xi}} = \\begin{bmatrix} I & \vec{v}\theta \\\\ 0 & 1 \\end{bmatrix}$, which is a pure translation.
   - If $\vec{w} \neq \vec{0}$, assume $\lVert \vec{w} \rVert = 1$, then $e^{\hat{\xi}} = \\begin{bmatrix} R & \vec{p} \\\\ 0 & 1 \\end{bmatrix}$, where $R = e^{\hat{\omega}\theta}$ and $\vec{p} = (I - e^{\hat{\omega}\theta})\vec{w} \times \vec{v} + \vec{w}\vec{w}^T\vec{v}\theta$
