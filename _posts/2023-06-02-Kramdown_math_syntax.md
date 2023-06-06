@@ -51,7 +51,7 @@ icon: icon-html
     ```markdown
     $ \\begin{bmatrix}a & b \\\\ c & d\\end{bmatrix} $
     ```
-- To avoid , in $$ part.
+- To avoid | in $$ part.
     
 - Example:
   ```markdown
