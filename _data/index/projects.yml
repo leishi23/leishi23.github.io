@@ -4,7 +4,7 @@
 - name: Dexterous Manipulation
   i18n: jalpc
   gh_user: jarrekk
-  repo: https://github.com/leishi23/ICRA2023_Dynamics_Grasping
+  repo: https://www.researchgate.net/publication/367990592_ICRA2023Differential_Dynamic_Programming_based_Hybrid_Manipulation_Strategy_for_Dynamic_Grasping
   img: /static/assets/img/landing/ur16e.webp
   desc: 
     1: . Designed a general dynamic hybrid manipulation strategy for dynamic grasping.
