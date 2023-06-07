@@ -5,6 +5,7 @@
   i18n: jalpc
   gh_user: leishi23
   repo: ICRA2023_Dynamics_Grasping
+  url: https://github.com/leishi23/ICRA2023_Dynamics_Grasping
   img: /static/assets/img/landing/ur16e.webp
   desc: 
     1: . Designed a general dynamic hybrid manipulation strategy for dynamic grasping.
@@ -15,6 +16,7 @@
   i18n: cpython
   gh_user: leishi23
   repo: Rough_terrain_vehicle_control
+  url: https://github.com/leishi23/Rough_terrain_vehicle_control
   img: /static/assets/img/landing/carla.jpg
   desc: 
     1: . Implemented algorithms from scratch on CARLA simulation to build a time-aligned dataset, including collecting, transforming and real-time plotting sensor data.
