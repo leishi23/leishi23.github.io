@@ -20,4 +20,4 @@
   desc: 
     1: . Implemented algorithms from scratch on CARLA simulation to build a time-aligned dataset, including collecting, transforming and real-time plotting sensor data.
     2: . Implemented a CNN & LSTM based model from scratch to make motion prediction of an autonomous ground vehicle in urban area and arbitrary rough terrain area. The imported rough terrain map is customized on RoadRunner.
-    3: . (IN PROGRESS) Implementing a MPPI-Control based algorithm to guide the motion planning and control of the vehicle.
+    3: . Implemented a MPPI-Control based algorithm to guide the motion planning and control of the vehicle.
