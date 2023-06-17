@@ -1,18 +1,18 @@
 # links section data
-- last_name: Google
+- last_name: Github Homepage
   first_name:
   desc: Senior Lecturer
-  website: https://www.google.com
-  email: ceo@google.com
+  website: https://github.com/leishi23
+  email: leishi9823@gmail.com
 
-- last_name: CSDN
+- last_name: Linkedin Homepage
   first_name: 
   desc: Lecturer
-  website: https://www.csdn.net/?spm=1000.2115.3001.4476
-  email: cto@google.com
+  website: https://www.linkedin.com/in/lei-shi-45264b188/
+  email: leishi9823@gmail.com
 
-- last_name: Github
+- last_name: CV
   first_name: 
   desc: Note
-  website: https://github.com
-  email: coo@google.com
+  website: https://leishi23.github.io/homepage/linux/2023/06/17/CV.html
+  email: leishi9823@gmail.com
