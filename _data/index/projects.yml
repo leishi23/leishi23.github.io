@@ -1,7 +1,7 @@
 # projects section data
 # If you don't have language feature(language.yml is empty), ignore "i18n" items
 # Suggest projects' img be located at '/static/assets/img/landing', and edit following img items.
-- name: Dexterous Manipulation
+- name: Dexterous Manipulation: Dynamic Grasping
   i18n: jalpc
   gh_user: leishi23
   repo: ICRA2023_Dynamics_Grasping
@@ -11,6 +11,17 @@
     1: . Designed a general dynamic hybrid manipulation strategy for dynamic grasping.
     2: . Designed specific unprecedented non-prehensile manipulation based on UR16e, including fast dynamical grasping mechanism.
     3: . Customized double inverted pendulum model-based algorithm (MATLAB) to guide the motion planning of UR16e.
+
+- name: Dexterous Manipulation Online Planning
+  i18n: jalpc
+  gh_user: leishi23
+  repo: DMOP
+  url: https://github.com/leishi23/DMOP
+  img: /static/assets/img/landing/ur16e.webp
+  desc: 
+    1: . Comprehensive and robust manipulation of objects
+    2: . Fast enough to support online computation and replanning
+    3: . A base for manipulation replanning and recovery
 
 - name: Rough Terrain Ground Vehicle Control
   i18n: cpython
