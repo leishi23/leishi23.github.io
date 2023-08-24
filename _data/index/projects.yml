@@ -30,7 +30,7 @@
   url: https://github.com/leishi23/DMOP
   img: /static/assets/img/landing/ur16e.webp
   desc: 
-    1: . Analyze human motion and conclude its mechanism: coordinate movement and compliant movement 
+    1: . Analyze human motion and conclude its mechanism i.e coordinate movement and compliant movement 
     2: . Analyze coordinate movement and implement it on 2-d translation and rotation motion 
     3: . Came up with a parametric optimal control algorithm used for this project 
 
