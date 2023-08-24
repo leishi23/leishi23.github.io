@@ -26,13 +26,13 @@
 - name: Human-Like Motion Planning Algorithm 
   i18n: jalpc
   gh_user: leishi23
-  # repo: DMOP
-  # url: https://github.com/leishi23/DMOP
+  repo: DMOP
+  url: https://github.com/leishi23/DMOP
   img: /static/assets/img/landing/ur16e.webp
   desc: 
     1: . Analyze human motion and conclude its mechanism: coordinate movement and compliant movement 
     2: . Analyze coordinate movement and implement it on 2-d translation and rotation motion 
-    3：. Came up with a parametric optimal control algorithm used for this project 
+    3: . Came up with a parametric optimal control algorithm used for this project 
 
 - name: Rough Terrain Ground Vehicle Control
   i18n: cpython
