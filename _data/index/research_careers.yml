@@ -55,7 +55,7 @@
     detail: May. 2023 ~ Aug. 2023
     i18n: company_a_date
   job:
-    detail: Research Intern
+    detail: Research Assistant
     i18n: company_a_job
   icon: fa-hand-pointer-o
-  # present: true
+  present: true
