@@ -45,7 +45,7 @@
   icon: fa-hand-pointer-o
   # present: true
 
-  - name:
+- name:
     detail: University of Wisconsin - Madison
     i18n: High School
   desc:
