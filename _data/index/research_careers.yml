@@ -37,10 +37,25 @@
     detail: Robot Dexterous Manipulation
     i18n: company_a_desc
   date:
-    detail: May. 2023 ~ Present
+    detail: May. 2023 ~ Aug. 2023
     i18n: company_a_date
   job:
     detail: Research Intern
     i18n: company_a_job
   icon: fa-hand-pointer-o
-  present: true
+  # present: true
+
+  - name:
+    detail: University of Wisconsin - Madison
+    i18n: High School
+  desc:
+    detail: Autonomous Vehicles
+    i18n: company_a_desc
+  date:
+    detail: May. 2023 ~ Aug. 2023
+    i18n: company_a_date
+  job:
+    detail: Research Intern
+    i18n: company_a_job
+  icon: fa-hand-pointer-o
+  # present: true
