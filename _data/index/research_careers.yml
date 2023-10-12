@@ -57,5 +57,5 @@
   job:
     detail: Research Assistant
     i18n: company_a_job
-  icon: fa-hand-pointer-o
+  icon: fa-solid fa-car
   present: true
