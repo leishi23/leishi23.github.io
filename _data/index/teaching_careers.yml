@@ -14,3 +14,18 @@
     i18n: company_a_job
   icon: fa-linode
 #   present: true
+
+- name:
+    detail: University of Wisconsin - Madison
+    i18n: High School
+  desc:
+    detail: Dynamics
+    i18n: company_a_desc
+  date:
+    detail: Aug. 2023 ~ Dec. 2023
+    i18n: company_a_date
+  job:
+    detail: Teaching Assistant
+    i18n: company_a_job
+  icon: fa-linode
+  present: true
