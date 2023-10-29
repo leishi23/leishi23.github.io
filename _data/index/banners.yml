@@ -8,10 +8,13 @@
 # - src: landing/header_two.jpg
 #   title: first banner image
 
-- src: landing/wallhaven-kx98xd.jpg
-  title: second banner image
+- src: landing/luca-bravo-ii5JY_46xH0-unsplash.jpg
+  title: third banner image
 
-- src: landing/b4.jpg
+- src: landing/cristina-gottardi-wndpWTiDuT0-unsplash.jpg
+  title: third banner image
+
+- src: landing/grant-ritchie-x1w_Q78xNEY-unsplash.jpg
   title: third banner image
 
 # - src: landing/b5.jpg
