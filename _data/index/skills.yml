@@ -2,5 +2,5 @@
 
 label: Ability
 id : cs
-aspects: Robot kinematics and dynamics, Robot Control, Robot Motion Planning, Machine Learing, Python, C++
-percentage: 95, 90, 95, 80, 98, 80
+aspects: Robot kinematics and dynamics, Robot Control, Robot Motion Planning, Machine Learing, Python, C++/C#
+percentage: 95, 90, 95, 80, 98, 88
