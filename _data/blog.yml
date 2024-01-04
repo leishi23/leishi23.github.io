@@ -21,8 +21,8 @@
 # - name: Motion planning
 #   href: /motion planning/
 
-# - name: Machine learning
-#   href: /machine learning/
+- name: Machine learning
+  href: /machine learning/
   
 - name: Control & dynamics 
   href: /control & dynamics/
