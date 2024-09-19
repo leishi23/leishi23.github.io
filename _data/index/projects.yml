@@ -27,7 +27,7 @@
   i18n: jalpc
   gh_user: leishi23
   repo: DMOP
-  url: https://github.com/leishi23/DMOP
+  url: https://arxiv.org/abs/2409.10747
   img: /static/assets/img/landing/ur16e.webp
   desc: 
     1: . Analyze human motion and conclude its mechanism i.e coordinate movement and compliant movement 
@@ -44,3 +44,16 @@
     1: . Implemented algorithms from scratch on CARLA simulation to build a time-aligned dataset, including collecting, transforming and real-time plotting sensor data.
     2: . Implemented a CNN & LSTM based model from scratch to make motion prediction of an autonomous ground vehicle in urban area and arbitrary rough terrain area. The imported rough terrain map is customized on RoadRunner.
     3: . Implemented a MPPI-Control based algorithm to guide the motion planning and control of the vehicle.
+
+    
+
+- name: Fairness-Oriented Control Framework for Safety-Critical Multi-Robot Systems
+  i18n: cpython
+  gh_user: leishi23
+  repo: Rough_terrain_vehicle_control
+  url: https://arxiv.org/abs/2409.10749
+  img: /static/assets/img/landing/carla.jpg
+  desc: 
+    1: . An Alternative Authority Control (AAC) framework is introduced, facilitating the dynamic distribution of control authority among robotic agents.  
+    2: . A Model Predictive Control with Flexible Control Barrier Functions (MPC-FCBF) framework is proposed to enhance dynamic obstacle avoidance capabilities. 
+    3: . A hierarchical control architecture is developed by integrating the AAC and MPC-FCBF frameworks, offering efficient dynamic authority allocation and improved obstacle avoidance for multi-agent robotic systems.
