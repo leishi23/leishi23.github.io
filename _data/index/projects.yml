@@ -52,7 +52,7 @@
   gh_user: leishi23
   repo: Rough_terrain_vehicle_control
   url: https://arxiv.org/abs/2409.10749
-  img: /static/assets/img/landing/carla.jpg
+  img: static/assets/img/landing/multi_robots.jpeg
   desc: 
     1: . An Alternative Authority Control (AAC) framework is introduced, facilitating the dynamic distribution of control authority among robotic agents.  
     2: . A Model Predictive Control with Flexible Control Barrier Functions (MPC-FCBF) framework is proposed to enhance dynamic obstacle avoidance capabilities. 
