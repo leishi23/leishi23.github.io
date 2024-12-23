@@ -10,7 +10,7 @@
   desc: 
     1: . Designed a general dynamic hybrid manipulation strategy for dynamic grasping.
     2: . Designed specific unprecedented non-prehensile manipulation based on UR16e, including fast dynamical grasping mechanism.
-    3: . Customized double inverted pendulum model-based algorithm (MATLAB) to guide the motion planning of UR16e.
+    3: . Customized double inverted pendulum model-based algo for UR16e.
 
 - name: Dexterous Manipulation Online Planning
   i18n: jalpc
