@@ -57,3 +57,12 @@
     1: . An Alternative Authority Control (AAC) framework is introduced, facilitating the dynamic distribution of control authority among robotic agents.  
     2: . A Model Predictive Control with Flexible Control Barrier Functions (MPC-FCBF) framework is proposed to enhance dynamic obstacle avoidance capabilities. 
     3: . A hierarchical control architecture is developed by integrating the AAC and MPC-FCBF frameworks, offering efficient dynamic authority allocation and improved obstacle avoidance for multi-agent robotic systems.
+
+- name: Optimal Control of Upper Body in Humanoid Robot
+  i18n: jalpc
+  gh_user: leishi23
+  repo: Humanoid_Upper_Body_Control
+  url: https://arxiv.org/abs/2411.09935
+  img: static/assets/img/landing/humanoid.png
+  desc: 
+    1: . Developed an analytical bang-bang control solution for a humanoid robotic system that uses variable damping-based impedance coordinative control to optimize lower limb energy consumption caused by upper body oscillation while enabling passive stability of objects held on upper arms, adapting to uncertain lower limb motion.
