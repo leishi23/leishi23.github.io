@@ -799,9 +799,20 @@ button.dim:active:before {
   min-height: 200px;
 }
 
-.img-circle {
-  border-radius: 85%;
+// .img-circle {
+//   border-radius: 85%;
+// }
+
+.img-square {
+    border-radius: 0; /* 确保图片是方形的 */
 }
+
+.img-large {
+    width: 100%; /* 或者具体设置宽度 */
+    max-width: 600px; /* 控制图片最大宽度，例如600px */
+    height: auto; /* 保持图片纵横比 */
+}
+
 
 .btn-circle {
   width: 30px;
