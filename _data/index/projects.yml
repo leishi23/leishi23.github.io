@@ -44,7 +44,15 @@
     2: . Implemented a CNN & LSTM based model from scratch to make motion prediction of an autonomous ground vehicle in urban area and arbitrary rough terrain area. The imported rough terrain map is customized on RoadRunner.
     3: . Implemented a MPPI-Control based algorithm to guide the motion planning and control of the vehicle.
 
-    
+- name: Optimal Control of Upper Body in Humanoid Robot
+  i18n: jalpc
+  gh_user: leishi23
+  repo: Humanoid_Upper_Body_Control
+  url: https://arxiv.org/abs/2411.09935
+  img: static/assets/img/landing/humanoid.png
+  desc: 
+    1: . Developed an analytical bang-bang control solution for a humanoid robotic system that uses variable damping-based impedance coordinative control to optimize lower limb energy consumption caused by upper body oscillation while enabling passive stability of objects held on upper arms, adapting to uncertain lower limb motion.
+
 
 - name: Fairness-Oriented Control Framework for Safety-Critical Multi-Robot Systems
   i18n: cpython
@@ -59,11 +67,3 @@
 
 
 
-- name: Optimal Control of Upper Body in Humanoid Robot
-  i18n: jalpc
-  gh_user: leishi23
-  repo: Humanoid_Upper_Body_Control
-  url: https://arxiv.org/abs/2411.09935
-  img: static/assets/img/landing/humanoid.png
-  desc: 
-    1: . Developed an analytical bang-bang control solution for a humanoid robotic system that uses variable damping-based impedance coordinative control to optimize lower limb energy consumption caused by upper body oscillation while enabling passive stability of objects held on upper arms, adapting to uncertain lower limb motion.
