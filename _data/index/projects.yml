@@ -59,7 +59,7 @@
     3: . A hierarchical control architecture is developed by integrating the AAC and MPC-FCBF frameworks, offering efficient dynamic authority allocation and improved obstacle avoidance for multi-agent robotic systems.
 
 - name: Optimal Control of Upper Body in Humanoid Robot
-  i18n: jalpc
+  i18n: cpython
   gh_user: leishi23
   repo: Humanoid_Upper_Body_Control
   url: https://arxiv.org/abs/2411.09935
