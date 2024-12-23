@@ -6,16 +6,17 @@
         </div>
     </div>
     <div class="row">
+        {% assign project_count = site.data.index.projects.size %}
         {% for project in site.data.index.projects %}
             {% assign loopindex = forloop.index | modulo: 2 %}
             {% if forloop.last %}
-                {% if forloop.last == forloop.first %}
+                {% if project_count | modulo: 2 != 0 %}
             <div class="col-sm-6 wow col-sm-offset-3 zoomIn">
                 {% else %}
-            <div class="col-sm-6 wow {% if loopindex == 1 %} fadeInLeft col-sm-offset-3 {% else %} fadeInRight {% endif %}">
+            <div class="col-sm-6 wow zoomIn">
                 {% endif %}
             {% else %}
-            <div class="col-sm-12 wow {% if loopindex == 1 %} fadeInLeft col-sm-offset-3 {% else %} fadeInRight {% endif %}">
+            <div class="col-sm-6 wow {% if loopindex == 1 %} fadeInLeft {% else %} fadeInRight {% endif %}">
             {% endif %}
               <div class="team-member">
                   <img src="{{ project.img | prepend: site.baseurl }}" class="img-responsive img-large img-square" alt="{{ project.name }}">
