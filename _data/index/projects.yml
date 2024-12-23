@@ -39,7 +39,7 @@
   gh_user: leishi23
   repo: Rough_terrain_vehicle_control
   url: https://github.com/leishi23/Rough_terrain_vehicle_control
-  img: /static/assets/img/landing/carla.jpg
+  img: /static/assets/img/landing/roughterrain.gif
   desc: 
     1: . Implemented algorithms from scratch on CARLA simulation to build a time-aligned dataset, including collecting, transforming and real-time plotting sensor data.
     2: . Implemented a CNN & LSTM based model from scratch to make motion prediction of an autonomous ground vehicle in urban area and arbitrary rough terrain area. The imported rough terrain map is customized on RoadRunner.
