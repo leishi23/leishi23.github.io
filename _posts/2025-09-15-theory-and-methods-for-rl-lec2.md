@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Theory and Methods for Reinforcement Learning — Lec.2"
-date:   2025-09-15
+date:   2025-09-14
 desc: "Theory and Methods for Reinforcement Learning — Lec.2"
 keywords: "Machine learning"
 categories: [Machine learning]
