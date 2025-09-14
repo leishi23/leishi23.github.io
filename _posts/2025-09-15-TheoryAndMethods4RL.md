@@ -3,9 +3,9 @@ layout: post
 title:  "Theory and Methods for Reinforcement Learning — Lec.2"
 date:   2025-09-15
 desc: "Theory and Methods for Reinforcement Learning — Lec.2"
-keywords: "Reinforcement Learning"
+keywords: "Machine learning"
 categories: [Machine learning]
-tags: [Reinforcement Learning]
+tags: [Machine learning]
 icon: icon-html
 ---
 
