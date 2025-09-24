@@ -1,5 +1,4 @@
 # Welcome to Jekyll!
-
 # Website settings
 title: LeiSHI
 description: Jack's blog,use Jekyll and github pages.
@@ -67,4 +66,7 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
-
+  math_engine: mathjax
+  math_engine_opts:
+    preview: true
+    preview_as_code: false
