@@ -1,30 +1,38 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1; minimum-scale=1; user-scalable=no;">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
   {% if page.desc %}
     <meta content="{{ page.desc }}" name="description">
   {% endif %}
   {% if page.keywords %}
     <meta name="keywords" content="{{ page.keywords }}">
   {% endif %}
+
   <meta name="author" content="{{ site.author.name }}">
   <meta name="baseurl" content="{{ site.baseurl }}">
+
   <title>
     {% if page.title != "index" %}
-        {{ site.title }}|{{ page.title }}
+      {{ site.title }}|{{ page.title }}
     {% else %}
-        {{ site.title }}
+      {{ site.title }}
     {% endif %}
   </title>
+
   <!-- favicon -->
   <link rel="shortcut icon" href="{{ "/static/assets/img/letter.ico" | prepend: site.baseurl }}">
+
   <!-- Main CSS -->
   <link href="{{ "/static/assets/app-20210315.min.css" | prepend: site.baseurl }}" rel="stylesheet">
   <link href="{{ "/static/css/custom.css" | prepend: site.baseurl }}" rel="stylesheet">
+
   <!-- Main Scripts -->
-  <script src="{{"/static/assets/app-20210315.min.js"| prepend: site.baseurl }}"></script>
-  <script src="{{"/static/assets/blog-20210315.min.js"| prepend: site.baseurl }}"></script>
+  <script src="{{ "/static/assets/app-20210315.min.js" | prepend: site.baseurl }}"></script>
+  <script src="{{ "/static/assets/blog-20210315.min.js" | prepend: site.baseurl }}"></script>
+
   <!-- Google AdSense -->
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>
@@ -33,97 +41,40 @@
       enable_page_level_ads: true
     });
   </script>
-  
-  <!-- Mathjax Support -->
+
+  <!-- MathJax Support (干净版) -->
   <script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [['
-    options: {
-      ignoreHtmlClass: "tex2jax_ignore",
-      processHtmlClass: "tex2jax_process"
-    },
-    startup: {
-      ready: () => {
-        console.log('MathJax is loaded and ready');
-        MathJax.startup.defaultReady();
-        MathJax.startup.promise.then(() => {
-          console.log('MathJax initial typesetting complete');
-        });
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true,
+        tags: 'ams'
+      },
+      options: {
+        ignoreHtmlClass: "tex2jax_ignore",
+        processHtmlClass: "tex2jax_process"
+      },
+      startup: {
+        ready: () => {
+          console.log('MathJax is loaded and ready');
+          MathJax.startup.defaultReady();
+          MathJax.startup.promise.then(() => {
+            console.log('MathJax initial typesetting complete');
+          });
+        }
       }
-    }
-  };
+    };
   </script>
   <script id="MathJax-script" async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-  </script>
-  
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GMDVN35R6T"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-GMDVN35R6T');
-  </script>
-</head>, '
-    options: {
-      ignoreHtmlClass: "tex2jax_ignore",
-      processHtmlClass: "tex2jax_process"
-    },
-    startup: {
-      ready: () => {
-        console.log('MathJax is loaded and ready');
-        MathJax.startup.defaultReady();
-        MathJax.startup.promise.then(() => {
-          console.log('MathJax initial typesetting complete');
-        });
-      }
-    }
-  };
-  </script>
-  <script id="MathJax-script" async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-  </script>
-  
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GMDVN35R6T"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-GMDVN35R6T');
-  </script>
-</head>], ['\\(', '\\)']],
-      displayMath: [['$','$'], ['\\[', '\\]']],
-      processEscapes: true,
-      processEnvironments: true,
-      tags: 'ams'
-    },
-    options: {
-      ignoreHtmlClass: "tex2jax_ignore",
-      processHtmlClass: "tex2jax_process"
-    },
-    startup: {
-      ready: () => {
-        console.log('MathJax is loaded and ready');
-        MathJax.startup.defaultReady();
-        MathJax.startup.promise.then(() => {
-          console.log('MathJax initial typesetting complete');
-        });
-      }
-    }
-  };
-  </script>
-  <script id="MathJax-script" async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-  </script>
-  
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GMDVN35R6T"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-GMDVN35R6T');
   </script>
