@@ -57,5 +57,5 @@
   job:
     detail: Graduate Student
     i18n: company_a_job
-  icon: fa-solid fa-car
+  icon: fa-car
   present: true

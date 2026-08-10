@@ -1,8 +1,8 @@
 # Welcome to Jekyll!
 # Website settings
-title: LeiSHI
-description: Jack's blog,use Jekyll and github pages.
-keywords: Jack,Jalpc,blog,Jekyll,github,gh-pages
+title: Lei Shi
+description: Lei Shi — PhD researcher in robotics at UW–Madison, working on motion planning, control, and reinforcement learning.
+keywords: Lei Shi, robotics, motion planning, robot control, reinforcement learning, UW–Madison, PhD
 baseurl:   # if you have suburl as homepage like '/homepage', please change it to '/homepage' and your repo's name should be 'homepage'
 url: https://leishi23.github.io  # url should be 'http://<github_username>.github.io/homepage' as before
 # url: http://127.0.0.1:4000
@@ -15,11 +15,11 @@ author:  # change following line to your infomation.
   last_name: Shi  # Be used at index page about me section.
   avatar: /static/assets/img/landing/10.jpg  # upload your avatar at directory and edit it.
   github_username: leishi23  # Leave blank if you don't have now
-  linkedin_id: jarrekk # Leave blank if you don't have now
-  facebook_username: jiakunnj  # Leave blank if you don't have now
-  twitter_username: jiakun614  # Leave blank if you don't have now
+  linkedin_id: lei-shi-45264b188
+  facebook_username:
+  twitter_username:
   email: leishi9823@gmail.com  # Leave blank if you don't have now
-  cv: http://cv.jarrekk.com  # An online CV can be printed as PDF, leave blank if you don't have now
+  cv: https://drive.google.com/file/d/19bbzShAorXqLztZJ0Y6JkEsejvODsvIv/view?usp=sharing
   # skill icons are on avatar's left and right side. Reference urls are http://fontawesome.io/ and http://fizzed.com/oss/font-mfizz
   skill_icon1:
     - name: icon-apache
@@ -30,13 +30,13 @@ author:  # change following line to your infomation.
   desc: One day, I want to make a difference in our daily life with my knowledge as a passionate researcher. Even a little difference is the fantastic realization of my life's ultimate meaning.  # Describe yourself.
 
 # comment
-disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
-  name: jalpc
+# disqus:  # enable comments by uncommenting and setting YOUR own shortname
+#   name: your-disqus-shortname
 
 # analytics
 ## google analytics
-ga:  # if you wanna this feature, go to https://www.google.com/analytics/ to get your configuration; if not, comment following line.
-  id: UA-93473370-3
+# ga:  # legacy Universal Analytics (retired 2023) — GA4 (gtag) lives in _includes/head.html & index_head.html
+#   id: UA-93473370-3
 
 ## google optimize
 go:
@@ -51,7 +51,7 @@ donation: off  # type 'on'/'off' to choice display donation button at post page 
 
 ## carousels
 index_carousel: on  # index page carousel switch
-blog_carousel: on  # blog page carousel switch
+blog_carousel: off  # blog page carousel switch
 
 # scss
 sass:

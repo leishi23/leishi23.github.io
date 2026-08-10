@@ -1,0 +1,38 @@
+<section class="section about" id="about">
+  <div class="section__head reveal">
+    <span class="section__num">01</span>
+    <h2 class="section__title">About</h2>
+  </div>
+  <div class="about__grid">
+    <div class="about__text">
+      <p class="about__lead reveal">I&rsquo;m Lei Shi &mdash; a robotics researcher building robust algorithms that fully exploit a robot&rsquo;s dynamics and sensing to act in natural, unstructured environments.</p>
+      <p class="about__body reveal">Research interests: robot motion planning &amp; control, reinforcement learning, and unmanned ground vehicles.</p>
+      <p class="about__note reveal">{{ site.author.desc }}</p>
+      <div class="about__links reveal">
+        <a href="https://github.com/{{ site.author.github_username }}" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/lei-shi-45264b188/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:{{ site.author.email }}">Email</a>
+        <a href="{{ site.author.cv }}" target="_blank" rel="noopener">CV</a>
+      </div>
+    </div>
+    <aside class="about__aside">
+      <div class="about__portrait reveal">
+        <img src="{{ site.author.avatar | prepend: site.baseurl }}" alt="Portrait of Lei Shi" loading="lazy">
+      </div>
+      <div class="skills">
+        {% assign skill_names = site.data.index.skills.aspects | split: ',' %}
+        {% assign skill_vals = site.data.index.skills.percentage | split: ',' %}
+        {% for name in skill_names %}
+        {% assign val = skill_vals[forloop.index0] | strip %}
+        <div class="skill reveal" style="--i: {{ forloop.index0 }}">
+          <div class="skill__row">
+            <span class="skill__label">{{ name | strip }}</span>
+            <span class="skill__val">{{ val }}</span>
+          </div>
+          <div class="skill__track"><span class="skill__fill" style="--val: {{ val }}%"></span></div>
+        </div>
+        {% endfor %}
+      </div>
+    </aside>
+  </div>
+</section>

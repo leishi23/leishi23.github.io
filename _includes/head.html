@@ -1,8 +1,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   {% if page.desc %}
     <meta content="{{ page.desc }}" name="description">
@@ -13,6 +12,13 @@
 
   <meta name="author" content="{{ site.author.name }}">
   <meta name="baseurl" content="{{ site.baseurl }}">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{ page.title }}">
+  {% if page.desc %}<meta property="og:description" content="{{ page.desc }}">{% endif %}
+  <meta property="og:url" content="{{ site.url }}{{ page.url | prepend: site.baseurl }}">
+  <meta name="twitter:card" content="summary">
 
   <title>
     {% if page.title != "index" %}
@@ -25,22 +31,19 @@
   <!-- favicon -->
   <link rel="shortcut icon" href="{{ "/static/assets/img/letter.ico" | prepend: site.baseurl }}">
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
   <!-- Main CSS -->
   <link href="{{ "/static/assets/app-20210315.min.css" | prepend: site.baseurl }}" rel="stylesheet">
   <link href="{{ "/static/css/custom.css" | prepend: site.baseurl }}" rel="stylesheet">
+  <link href="{{ "/static/css/blog.css" | prepend: site.baseurl }}" rel="stylesheet">
 
   <!-- Main Scripts -->
   <script src="{{ "/static/assets/app-20210315.min.js" | prepend: site.baseurl }}"></script>
   <script src="{{ "/static/assets/blog-20210315.min.js" | prepend: site.baseurl }}"></script>
-
-  <!-- Google AdSense -->
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "ca-pub-6196184620210315",
-      enable_page_level_ads: true
-    });
-  </script>
 
   <!-- MathJax Support (干净版) -->
   <script>

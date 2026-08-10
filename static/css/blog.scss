@@ -1,0 +1,243 @@
+---
+---
+
+/* ============================================================
+   Blog cohesion layer — repaints the existing (Bootstrap 3 / Jalpc)
+   blog, post & category markup to match the editorial landing.
+   Loaded LAST on non-index pages (via _includes/head.html), so it
+   overrides app-*.min.css + custom.css without changing any markup.
+   ============================================================ */
+
+:root {
+  --paper:    #F6F4EF;
+  --paper-2:  #EFEBE2;
+  --ink:      #17140F;
+  --muted:    #6E6960;
+  --hairline: #DAD4C8;
+  --accent:   #C0492E;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --ease: cubic-bezier(.2,.7,.2,1);
+}
+
+/* ---------- base ---------- */
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper) !important;
+  color: var(--ink) !important;
+  font-family: var(--font-sans) !important;
+  font-size: 17px;
+  line-height: 1.75;
+  padding-top: 4.75rem;               /* clearance for the fixed navbar (carousel removed) */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+::selection { background: var(--accent); color: var(--paper); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display) !important;
+  color: var(--ink);
+  font-weight: 400;
+  letter-spacing: -.01em;
+}
+
+a { color: var(--accent); transition: color .25s var(--ease); }
+a:hover, a:focus { color: var(--ink); }
+
+/* ---------- top nav ---------- */
+.navbar-wrapper .navbar-default,
+.navbar-default.navbar-fixed-top {
+  background: rgba(246, 244, 239, .9) !important;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 0 !important;
+  border-bottom: 1px solid var(--hairline) !important;
+  box-shadow: none !important;
+  min-height: 4.75rem;
+}
+.navbar-default .navbar-brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: 1.05rem;
+  color: var(--ink) !important;
+  background: transparent !important;
+  height: auto;
+  padding: 1.4rem 15px;
+}
+.navbar-default .navbar-nav > li > a {
+  color: var(--ink) !important;
+  background: transparent !important;
+  font-family: var(--font-sans);
+  font-size: .88rem;
+  letter-spacing: .03em;
+  padding-top: 1.7rem;
+  padding-bottom: 1.7rem;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover {
+  color: var(--accent) !important;
+  background: transparent !important;
+}
+.navbar-default .navbar-toggle { border-color: var(--hairline) !important; }
+.navbar-default .navbar-toggle:hover { background: var(--paper-2) !important; }
+.navbar-default .navbar-toggle .icon-bar { background: var(--ink) !important; }
+.navbar-default .navbar-collapse { border-color: var(--hairline) !important; background: rgba(246, 244, 239, .98) !important; }
+
+/* ---------- content shell: flatten Bootstrap cards ---------- */
+.wrapper, .wrapper-content, .gray-bg, .white-bg { background: transparent !important; }
+.wrapper-content { padding: 2.5rem 15px !important; }
+.ibox, .ibox-content, .ibox-title {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* accent line + word */
+.navy-line { width: 56px; height: 2px; background: var(--accent); margin: 0 auto 1.25rem; border: 0; }
+.navy, a.navy { color: var(--accent) !important; }
+
+/* ---------- article (single post) ---------- */
+.article .ibox-content { max-width: 44rem; margin: 0 auto; }
+.article-title { margin-bottom: 2.5rem; }
+.article-title h1 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.08;
+  margin: .6rem 0 0;
+}
+.article-title .text-muted {
+  color: var(--muted) !important;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .78rem;
+}
+.article .ibox-content { font-size: 1.06rem; line-height: 1.85; }
+.article p { margin: 0 0 1.35rem; }
+.article h2 { font-size: 1.9rem; margin: 2.6rem 0 .9rem; }
+.article h3 { font-size: 1.4rem; margin: 2.1rem 0 .7rem; }
+.article ul, .article ol { margin: 0 0 1.35rem; padding-left: 1.4rem; }
+.article li { margin-bottom: .4rem; }
+.article blockquote {
+  border-left: 2px solid var(--accent);
+  padding: .2rem 0 .2rem 1.2rem;
+  margin: 1.6rem 0;
+  color: var(--muted);
+  font-style: italic;
+}
+.article img { max-width: 100%; height: auto; margin: 1.6rem auto; display: block; border: 1px solid var(--hairline); }
+.article iframe { max-width: 100%; }
+.article hr { border: 0; border-top: 1px solid var(--hairline); margin: 2rem 0; }
+.article a { text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
+.article table { width: 100%; border-collapse: collapse; margin: 1.6rem 0; font-size: .95rem; }
+.article th, .article td { border: 1px solid var(--hairline); padding: .5rem .75rem; text-align: left; }
+.article thead th { background: var(--paper-2); }
+
+/* ---------- code ---------- */
+code, pre, .highlight { font-family: var(--font-mono); }
+code.highlighter-rouge,                       /* inline code */
+p > code, li > code {
+  background: var(--paper-2);
+  color: var(--ink);
+  padding: .12em .4em;
+  border-radius: 2px;
+  font-size: .88em;
+}
+div.highlighter-rouge, figure.highlight { margin: 1.7rem 0; border-radius: 3px; overflow: hidden; }
+.highlight { background: #1c1917 !important; padding: 1.1rem 1.3rem; overflow: auto; }
+.highlight pre, pre.highlight {
+  background: transparent !important;
+  border: 0 !important;
+  margin: 0; padding: 0;
+  color: #f2efe9;
+  font-size: .9rem; line-height: 1.65;
+}
+.highlight code { background: transparent; padding: 0; color: inherit; font-size: inherit; }
+
+/* ---------- buttons / tags ---------- */
+.btn-white, .btn-white.btn-xs, button.btn-white {
+  background: transparent !important;
+  border: 1px solid var(--hairline) !important;
+  color: var(--muted) !important;
+  border-radius: 0 !important;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: .72rem !important;
+  box-shadow: none !important;
+}
+.btn-white:hover, .btn-white:focus { border-color: var(--accent) !important; color: var(--accent) !important; }
+.btn-link { color: var(--ink) !important; }
+.btn-primary {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  border-radius: 0 !important;
+}
+
+/* ---------- blog latest list ---------- */
+.vote-item {
+  background: transparent !important;
+  border: 0 !important;
+  border-top: 1px solid var(--hairline) !important;
+  box-shadow: none !important;
+  padding: 1.5rem 0 !important;
+  margin: 0 !important;
+}
+.vote-title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  line-height: 1.25;
+  color: var(--ink) !important;
+}
+.vote-title:hover { color: var(--accent) !important; }
+.vote-info, .vote-info a { color: var(--muted) !important; font-size: .8rem; }
+.vote-icon, .vote-icon i { color: var(--muted) !important; }
+
+/* ---------- category list ---------- */
+.blog .ibox { border-top: 1px solid var(--hairline) !important; padding: 1.6rem 0 !important; }
+.blog .ibox-content h2 { font-family: var(--font-display); font-size: 1.55rem; margin: 0 0 .4rem; }
+.blog .ibox-content .btn-link:hover h2 { color: var(--accent); }
+.blog .m-b-xs, .blog .m-b-xs strong { color: var(--muted); }
+
+/* ---------- pagination (jPages) ---------- */
+.pag-holder { text-align: center; margin-top: 2rem; }
+.pag-holder a {
+  display: inline-block;
+  min-width: 2rem;
+  padding: .35rem .5rem;
+  margin: 0 .1rem;
+  color: var(--ink);
+  border: 1px solid transparent;
+  font-size: .9rem;
+}
+.pag-holder a:hover, .pag-holder a.jp-current { color: var(--accent); border-color: var(--hairline); }
+
+/* ---------- search overlay input ---------- */
+.search-content { border: 0 !important; border-radius: 0 !important; }
+
+/* ---------- widen content: the blog templates render rows straight into <body>
+   (there is no .container), so cap at the landing width (1200) and center ---------- */
+@media (min-width: 1200px) { .navbar-wrapper .container { width: 1200px; } }
+.row { margin-left: 0; margin-right: 0; }                 /* no .container to absorb Bootstrap's -15px */
+.col-lg-8.col-lg-offset-2 {
+  float: none;
+  width: auto !important;
+  max-width: 1200px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+/* blog latest list: full-width editorial rows, drop the decorative shield icon */
+.vote-item .col-md-2, .vote-item .vote-icon { display: none; }
+.vote-item .col-md-10 { width: 100%; }
+/* keep single-article prose at a readable measure, just a touch wider */
+.article .ibox-content { max-width: 46rem; }
+
+/* ---------- calmer motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animated { animation: none !important; }
+}

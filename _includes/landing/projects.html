@@ -1,0 +1,30 @@
+<section class="section work" id="work">
+  <div class="section__head reveal">
+    <span class="section__num">03</span>
+    <h2 class="section__title">Selected Work</h2>
+  </div>
+  <div class="work__grid">
+    {% for p in site.data.index.projects %}
+    <article class="work__item reveal" style="--i: {{ forloop.index0 | modulo: 2 }}">
+      {% if p.url %}
+      <a class="work__media" href="{{ p.url }}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+        <img src="{{ p.img | prepend: site.baseurl }}" alt="{{ p.name }}" loading="lazy">
+      </a>
+      {% else %}
+      <span class="work__media">
+        <img src="{{ p.img | prepend: site.baseurl }}" alt="{{ p.name }}" loading="lazy">
+      </span>
+      {% endif %}
+      <div class="work__meta">
+        <span class="work__num">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+        <h3 class="work__title">
+          {% if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}
+        </h3>
+        <ul class="work__desc">
+          {% for line in p.desc %}<li>{{ line }}</li>{% endfor %}
+        </ul>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>

@@ -1,6 +1,7 @@
-# skills section data
+# skills section data — rendered by _includes/landing/about.html
+# `aspects` and `percentage` are comma-separated and paired by position.
 
 label: Ability
-id : cs
-aspects: Robot kinematics and dynamics, Robot Control, Robot Motion Planning, Machine Learing, Python, C++/C#
+id: cs
+aspects: Robot Kinematics & Dynamics, Robot Control, Motion Planning, Machine Learning, Python, C++/C#
 percentage: 95, 90, 95, 80, 98, 88

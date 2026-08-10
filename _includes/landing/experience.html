@@ -1,0 +1,28 @@
+<section class="section xp" id="experience">
+  <div class="section__head reveal">
+    <span class="section__num">02</span>
+    <h2 class="section__title">Experience</h2>
+  </div>
+
+  {% assign xp_groups = "edu_careers,research_careers,teaching_careers" | split: "," %}
+  {% assign xp_titles = "Education,Research,Teaching" | split: "," %}
+  {% for group in xp_groups %}
+  <div class="xp__group">
+    <h3 class="xp__group-title reveal">{{ xp_titles[forloop.index0] }}</h3>
+    <ul class="xp__list">
+      {% for c in site.data.index[group] %}
+      <li class="xp__item reveal{% if c.present %} is-present{% endif %}" style="--i: {{ forloop.index0 }}">
+        <span class="xp__date">{{ c.date.detail | strip }}</span>
+        <div class="xp__body">
+          <p class="xp__role">{{ c.job.detail | strip }}</p>
+          <p class="xp__org">{{ c.name.detail | strip }}</p>
+          {% if c.desc.detail and c.desc.detail != "TBD." %}
+          <p class="xp__desc">{{ c.desc.detail | strip }}</p>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</section>
