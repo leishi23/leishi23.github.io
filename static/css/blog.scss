@@ -105,7 +105,7 @@ a:hover, a:focus { color: var(--ink); }
 .navy, a.navy { color: var(--accent) !important; }
 
 /* ---------- article (single post) ---------- */
-.article .ibox-content { max-width: 44rem; margin: 0 auto; }
+.article .ibox-content { max-width: none; }
 .article-title { margin-bottom: 2.5rem; }
 .article-title h1 {
   font-size: clamp(2rem, 5vw, 3.4rem);
@@ -237,7 +237,16 @@ div.highlighter-rouge, figure.highlight { margin: 1.7rem 0; border-radius: 3px; 
 .vote-item .col-md-2, .vote-item .vote-icon { display: none; }
 .vote-item .col-md-10 { width: 100%; }
 /* keep single-article prose at a readable measure, just a touch wider */
-.article .ibox-content { max-width: 46rem; }
+/* single post: fluid full-width reading column (same gutter as the list) */
+.article .col-lg-10.col-lg-offset-1 {
+  float: none;
+  width: auto !important;
+  max-width: none;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
 
 /* ---------- calmer motion ---------- */
 @media (prefers-reduced-motion: reduce) {
