@@ -15,6 +15,7 @@
   --muted:    #6E6960;
   --hairline: #DAD4C8;
   --accent:   #C0492E;
+  --gutter:   clamp(1.25rem, 3vw, 2.5rem);   /* fluid side margin used by the full-width blog layout */
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -219,16 +220,18 @@ div.highlighter-rouge, figure.highlight { margin: 1.7rem 0; border-radius: 3px; 
 /* ---------- search overlay input ---------- */
 .search-content { border: 0 !important; border-radius: 0 !important; }
 
-/* ---------- widen content: the blog templates render rows straight into <body>
-   (there is no .container), so cap at the landing width (1200) and center ---------- */
-@media (min-width: 1200px) { .navbar-wrapper .container { width: 1200px; } }
+/* ---------- fluid, full-width content that adapts to the viewport
+   (blog templates render rows straight into <body>, with no .container) ---------- */
+.navbar-wrapper .container { width: auto; max-width: none; margin: 0; padding-left: var(--gutter); padding-right: var(--gutter); }
 .row { margin-left: 0; margin-right: 0; }                 /* no .container to absorb Bootstrap's -15px */
 .col-lg-8.col-lg-offset-2 {
   float: none;
   width: auto !important;
-  max-width: 1200px;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  max-width: none;                                        /* fluid — fills the window (side gutter scales with width) */
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
 }
 /* blog latest list: full-width editorial rows, drop the decorative shield icon */
 .vote-item .col-md-2, .vote-item .vote-icon { display: none; }
