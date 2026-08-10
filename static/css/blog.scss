@@ -8,6 +8,8 @@
    overrides app-*.min.css + custom.css without changing any markup.
    ============================================================ */
 
+@view-transition { navigation: auto; }   /* smooth native cross-page transitions (supporting browsers) */
+
 :root {
   --paper:    #F6F4EF;
   --paper-2:  #EFEBE2;
