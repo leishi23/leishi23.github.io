@@ -1,61 +1,53 @@
-# careers section data
-# if you don't have language feature(language.yml is empty), ignore "i18n" items
+# research experience — rendered by _includes/landing/experience.html
+# only the `detail` fields are used (the old i18n keys are gone with the i18n feature)
+
 - name:
     detail: Tencent CO.LTD, Robotics-X Lab
-    i18n: High School
   desc:
     detail: Robot Dexterous Manipulation
-    i18n: company_a_desc
   date:
     detail: May. 2021 ~ Sept. 2022
-    i18n: company_a_date
   job:
     detail: Research Intern
-    i18n: company_a_job
   icon: fa-hand-pointer-o
-#   present: true
 
 - name:
     detail: Johns Hopkins University, Laboratory for Computational Sensing and Robotics
-    i18n: High School
   desc:
     detail: Rough Terrain vehicle Learning-based Control
-    i18n: company_a_desc
   date:
     detail: May. 2022 ~ Dec. 2022
-    i18n: company_a_date
   job:
-    detail: Graduate Student
-    i18n: company_a_job
+    detail: Research Assistant
   icon: fa-bus
-#   present: true
 
 - name:
     detail: Tencent CO.LTD, Robotics-X Lab
-    i18n: High School
   desc:
     detail: Robot Dexterous Manipulation
-    i18n: company_a_desc
   date:
     detail: May. 2023 ~ Aug. 2023
-    i18n: company_a_date
   job:
     detail: Research Intern
-    i18n: company_a_job
   icon: fa-hand-pointer-o
-  # present: true
 
 - name:
     detail: University of Wisconsin - Madison
-    i18n: High School
   desc:
     detail: Autonomous Vehicles
-    i18n: company_a_desc
   date:
-    detail: Sept. 2023 ~ Present
-    i18n: company_a_date
+    detail: Sept. 2023 ~ May. 2025
   job:
-    detail: Graduate Student
-    i18n: company_a_job
+    detail: Research Assistant
   icon: fa-car
+
+- name:
+    detail: Futian Lab, Tencent & International Digital Economy Academy (IDEA)
+  desc:
+    detail: Robot Dexterous Manipulation
+  date:
+    detail: Nov. 2025 ~ Present
+  job:
+    detail: Research Intern
+  icon: fa-hand-pointer-o
   present: true
