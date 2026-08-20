@@ -11,18 +11,38 @@
 @view-transition { navigation: auto; }   /* smooth native cross-page transitions (supporting browsers) */
 
 :root {
+  color-scheme: light;
   --paper:    #F6F4EF;
   --paper-2:  #EFEBE2;
   --ink:      #17140F;
   --muted:    #6E6960;
   --hairline: #DAD4C8;
   --accent:   #C0492E;
+  --nav-bg:   246, 244, 239;   /* --paper as an RGB triplet, for the translucent navbar */
+  --code-bg:  #1c1917;
+  --code-fg:  #f2efe9;
   --gutter:   clamp(1.25rem, 3vw, 2.5rem);   /* fluid side margin used by the full-width blog layout */
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --ease: cubic-bezier(.2,.7,.2,1);
 }
+
+/* ---------- dark theme ---------- */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --paper:    #14120F;
+  --paper-2:  #1E1B17;
+  --ink:      #EDE8DF;
+  --muted:    #A19A8E;
+  --hairline: #322D26;
+  --accent:   #E4714F;
+  --nav-bg:   20, 18, 15;
+  --code-bg:  #0F0D0B;
+  --code-fg:  #EDE8DF;
+}
+
+body.theme-ready { transition: background-color .5s var(--ease), color .5s var(--ease); }
 
 /* ---------- base ---------- */
 html { scroll-behavior: smooth; }
@@ -50,15 +70,17 @@ a { color: var(--accent); transition: color .25s var(--ease); }
 a:hover, a:focus { color: var(--ink); }
 
 /* ---------- top nav ---------- */
+/* the theme offsets the fixed wrapper by 20px, which leaves a translucent strip
+   showing the page behind the navbar — pin it flush to the top instead */
+.navbar-wrapper { margin-top: 0 !important; background: var(--paper); }
 .navbar-wrapper .navbar-default,
 .navbar-default.navbar-fixed-top {
-  background: rgba(246, 244, 239, .9) !important;
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
+  background: var(--paper) !important;
   border: 0 !important;
   border-bottom: 1px solid var(--hairline) !important;
   box-shadow: none !important;
   min-height: 4.75rem;
+  margin-bottom: 0;
 }
 .navbar-default .navbar-brand {
   font-family: var(--font-display);
@@ -90,7 +112,12 @@ a:hover, a:focus { color: var(--ink); }
 .navbar-default .navbar-toggle { border-color: var(--hairline) !important; }
 .navbar-default .navbar-toggle:hover { background: var(--paper-2) !important; }
 .navbar-default .navbar-toggle .icon-bar { background: var(--ink) !important; }
-.navbar-default .navbar-collapse { border-color: var(--hairline) !important; background: rgba(246, 244, 239, .98) !important; }
+.navbar-default .navbar-collapse { border-color: var(--hairline) !important; background: transparent !important; }
+/* the collapsed (mobile) menu drops over the page, so there it needs a solid ground */
+@media (max-width: 767px) {
+  .navbar-default .navbar-collapse.in,
+  .navbar-default .navbar-collapse.collapsing { background: var(--paper) !important; }
+}
 
 /* ---------- content shell: flatten Bootstrap cards ---------- */
 .wrapper, .wrapper-content, .gray-bg, .white-bg { background: transparent !important; }
@@ -152,12 +179,12 @@ p > code, li > code {
   font-size: .88em;
 }
 div.highlighter-rouge, figure.highlight { margin: 1.7rem 0; border-radius: 3px; overflow: hidden; }
-.highlight { background: #1c1917 !important; padding: 1.1rem 1.3rem; overflow: auto; }
+.highlight { background: var(--code-bg) !important; padding: 1.1rem 1.3rem; overflow: auto; }
 .highlight pre, pre.highlight {
   background: transparent !important;
   border: 0 !important;
   margin: 0; padding: 0;
-  color: #f2efe9;
+  color: var(--code-fg);
   font-size: .9rem; line-height: 1.65;
 }
 .highlight code { background: transparent; padding: 0; color: inherit; font-size: inherit; }
@@ -249,6 +276,42 @@ div.highlighter-rouge, figure.highlight { margin: 1.7rem 0; border-radius: 3px; 
   padding-left: var(--gutter);
   padding-right: var(--gutter);
 }
+
+/* ---------- theme toggle (sits in the navbar) ---------- */
+.navbar-nav > li > .theme-toggle,
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  margin: 1.35rem 0 0 1.25rem;
+  padding: 0;
+  background: none;
+  border: 1px solid var(--hairline);
+  border-radius: 50%;
+  color: var(--ink);
+  cursor: pointer;
+  vertical-align: middle;
+  transition: color .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease);
+}
+.theme-toggle:hover { color: var(--accent); border-color: var(--accent); transform: rotate(-15deg); }
+.theme-toggle svg { width: 16px; height: 16px; display: block; }
+.theme-toggle .icon-moon { display: none; }
+[data-theme="dark"] .theme-toggle .icon-sun  { display: none; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
+@media (max-width: 767px) {
+  .theme-toggle { margin: .75rem 0 .75rem 15px; }
+}
+
+/* ---------- dark-mode adjustments for post content ---------- */
+[data-theme="dark"] .article img {
+  /* lecture scans / screenshots are white-background: dim them so they don't glare */
+  filter: brightness(.88) contrast(1.02);
+}
+[data-theme="dark"] .article img:hover { filter: none; }
+[data-theme="dark"] mjx-container { color: var(--ink); }
+[data-theme="dark"] .article iframe { filter: brightness(.9); }
+[data-theme="dark"] .search-tool { background-color: #000 !important; }
 
 /* ---------- calmer motion ---------- */
 @media (prefers-reduced-motion: reduce) {

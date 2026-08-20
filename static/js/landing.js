@@ -131,6 +131,21 @@
       var ctx = canvas.getContext("2d");
       var dpr = Math.min(win.devicePixelRatio || 1, 2);
       var W = 0, H = 0, pts = [], mouse = { x: -9999, y: -9999 }, running = false, id;
+      var palette = { ink: "23,20,15", accent: "192,73,46", dot: 0.30, line: 0.09 };
+
+      function readPalette() {
+        var cs = getComputedStyle(doc.documentElement);
+        var ink = (cs.getPropertyValue("--ink-rgb") || "").trim();
+        var acc = (cs.getPropertyValue("--accent-rgb") || "").trim();
+        var dot = parseFloat(cs.getPropertyValue("--dot-opacity"));
+        var line = parseFloat(cs.getPropertyValue("--line-opacity"));
+        if (ink) palette.ink = ink;
+        if (acc) palette.accent = acc;
+        if (!isNaN(dot)) palette.dot = dot;
+        if (!isNaN(line)) palette.line = line;
+      }
+      readPalette();
+      doc.addEventListener("themechange", readPalette);
 
       function resize() {
         var r = hero.getBoundingClientRect();
@@ -154,15 +169,15 @@
           var mdx = mouse.x - p.x, mdy = mouse.y - p.y, md = Math.sqrt(mdx * mdx + mdy * mdy);
           if (md < 130) { p.x += mdx * 0.005; p.y += mdy * 0.005; }
           ctx.beginPath(); ctx.arc(p.x, p.y, 1.5, 0, 6.2832);
-          ctx.fillStyle = "rgba(23,20,15,0.30)"; ctx.fill();
+          ctx.fillStyle = "rgba(" + palette.ink + "," + palette.dot + ")"; ctx.fill();
         }
         for (i = 0; i < pts.length; i++) {
           for (var j = i + 1; j < pts.length; j++) {
             var dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y, d = Math.sqrt(dx * dx + dy * dy);
-            if (d < 118) { ctx.beginPath(); ctx.moveTo(pts[i].x, pts[i].y); ctx.lineTo(pts[j].x, pts[j].y); ctx.strokeStyle = "rgba(23,20,15," + (0.09 * (1 - d / 118)) + ")"; ctx.lineWidth = 1; ctx.stroke(); }
+            if (d < 118) { ctx.beginPath(); ctx.moveTo(pts[i].x, pts[i].y); ctx.lineTo(pts[j].x, pts[j].y); ctx.strokeStyle = "rgba(" + palette.ink + "," + (palette.line * (1 - d / 118)) + ")"; ctx.lineWidth = 1; ctx.stroke(); }
           }
           var cdx = mouse.x - pts[i].x, cdy = mouse.y - pts[i].y, cd = Math.sqrt(cdx * cdx + cdy * cdy);
-          if (cd < 160) { ctx.beginPath(); ctx.moveTo(mouse.x, mouse.y); ctx.lineTo(pts[i].x, pts[i].y); ctx.strokeStyle = "rgba(192,73,46," + (0.35 * (1 - cd / 160)) + ")"; ctx.lineWidth = 1; ctx.stroke(); }
+          if (cd < 160) { ctx.beginPath(); ctx.moveTo(mouse.x, mouse.y); ctx.lineTo(pts[i].x, pts[i].y); ctx.strokeStyle = "rgba(" + palette.accent + "," + (0.35 * (1 - cd / 160)) + ")"; ctx.lineWidth = 1; ctx.stroke(); }
         }
       }
       function tick() { draw(); id = raf(tick); }

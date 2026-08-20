@@ -1,0 +1,12 @@
+<script>
+  /* Apply the saved/preferred theme BEFORE first paint to avoid a flash of the wrong theme.
+     Must stay inline in <head>. The matching toggle logic lives in theme.js. */
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      var dark = saved ? saved === 'dark'
+                       : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+    } catch (e) {}
+  })();
+</script>

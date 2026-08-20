@@ -9,12 +9,19 @@
 @view-transition { navigation: auto; }   /* smooth native cross-page transitions (supporting browsers) */
 
 :root {
+  color-scheme: light;
   --paper:    #F6F4EF;
   --paper-2:  #EFEBE2;
   --ink:      #17140F;
   --muted:    #6E6960;
   --hairline: #DAD4C8;
   --accent:   #C0492E;   /* swap this one line to re-skin (e.g. cobalt #1E3AE0) */
+
+  --nav-bg:      246, 244, 239;   /* --paper as an RGB triplet, for translucent nav backdrops */
+  --accent-rgb:  192, 73, 46;     /* --accent as an RGB triplet */
+  --ink-rgb:     23, 20, 15;      /* --ink as an RGB triplet (used by the hero canvas) */
+  --dot-opacity: 0.30;
+  --line-opacity: 0.09;
 
   --maxw:   1200px;
   --gutter: clamp(1.25rem, 5vw, 4rem);
@@ -23,6 +30,31 @@
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
   --ease: cubic-bezier(.2, .7, .2, 1);
+}
+
+/* ---------- dark theme (warm ink-on-charcoal, keeps the editorial feel) ---------- */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --paper:    #14120F;
+  --paper-2:  #1E1B17;
+  --ink:      #EDE8DF;
+  --muted:    #A19A8E;
+  --hairline: #322D26;
+  --accent:   #E4714F;   /* lifted for contrast on a dark ground */
+
+  --nav-bg:      20, 18, 15;
+  --accent-rgb:  228, 113, 79;
+  --ink-rgb:     237, 232, 223;
+  --dot-opacity: 0.34;
+  --line-opacity: 0.12;
+}
+
+/* smooth the flip (but never animate on first paint or for reduced-motion users) */
+body.theme-ready,
+body.theme-ready .site-nav,
+body.theme-ready .section,
+body.theme-ready .site-footer {
+  transition: background-color .5s var(--ease), color .5s var(--ease), border-color .5s var(--ease);
 }
 
 /* ---------- base ---------- */
@@ -99,7 +131,7 @@ section[id] { scroll-margin-top: 92px; }
   transition: background .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease);
 }
 .site-nav.is-scrolled {
-  background: rgba(246, 244, 239, .82);
+  background: rgba(var(--nav-bg), .82);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   border-bottom-color: var(--hairline);
@@ -531,7 +563,7 @@ section[id] { scroll-margin-top: 92px; }
   will-change: transform;
 }
 .cursor.is-visible { opacity: .65; }
-.cursor.is-hover { width: 54px; height: 54px; background: rgba(192, 73, 46, .08); opacity: 1; }
+.cursor.is-hover { width: 54px; height: 54px; background: rgba(var(--accent-rgb), .08); opacity: 1; }
 @media (pointer: coarse) { .cursor { display: none; } }
 
 .hero__title .word {
@@ -552,6 +584,32 @@ section[id] { scroll-margin-top: 92px; }
   .hero__inner { transform: none !important; }
   .hero__title .word { opacity: 1; transform: none; transition: none; }
 }
+
+/* ---------- theme toggle ---------- */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px; height: 38px;
+  padding: 0;
+  background: none;
+  border: 1px solid var(--hairline);
+  border-radius: 50%;
+  color: var(--ink);
+  cursor: pointer;
+  transition: color .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease);
+}
+.theme-toggle:hover { color: var(--accent); border-color: var(--accent); transform: rotate(-15deg); }
+.theme-toggle svg { width: 17px; height: 17px; display: block; }
+.theme-toggle .icon-moon { display: none; }
+[data-theme="dark"] .theme-toggle .icon-sun  { display: none; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
+
+/* dark-mode image treatment: take the glare off bright assets */
+[data-theme="dark"] .about__portrait img { filter: grayscale(1) brightness(.85) contrast(1.05); }
+[data-theme="dark"] .about__portrait:hover img { filter: brightness(.95); }
+[data-theme="dark"] .work__media img { filter: grayscale(.45) brightness(.85); }
+[data-theme="dark"] .work__item:hover .work__media img { filter: brightness(.95); }
 
 /* ---------- reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {

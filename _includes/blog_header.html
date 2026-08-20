@@ -25,7 +25,6 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a class="page-scroll" href="{{ "blog/" | prepend: site.baseurl }}">{{ site.index.home }}</a></li>
                     {% for tag in site.data.blog %}
                         {% if tag.name != 'Donate' or site.donation %}
                         {% if page.title == tag.name %}
@@ -36,6 +35,7 @@
                         <a class="page-scroll" href="{{ tag.href | prepend: site.baseurl }}">{{ tag.name }}</a></li>
                         {% endif %}
                     {% endfor %}
+                    <li>{% include theme_toggle.html %}</li>
                 </ul>
             </div>
         </div>
