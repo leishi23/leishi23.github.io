@@ -585,6 +585,159 @@ section[id] { scroll-margin-top: 92px; }
   .hero__title .word { opacity: 1; transform: none; transition: none; }
 }
 
+/* ============================================================
+   Ink-wash (水墨) scene behind the About section
+   ============================================================ */
+.about { position: relative; overflow: hidden; }
+.about > * { position: relative; z-index: 1; }
+
+.ink-scene {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.ink-scene__svg {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  transform: translateX(-50%);
+  /* the scene is a quiet wash, but should still read as brushwork */
+  opacity: .72;
+}
+
+/* ink tones — all derived from the page's ink colour so dark mode inverts cleanly */
+.ink-far,
+.ink-water__body     { fill: var(--ink); }
+.ink-far             { opacity: .13; }
+.ink-water__body     { opacity: .09; }
+.ink-mist__band      { fill: var(--paper); opacity: .5; }
+.ink-bamboo,
+.ink-raft-drift      { fill: var(--ink); }
+.ink-bamboo          { opacity: .42; }
+.ink-culm path       { fill: var(--ink); }
+.ink-node rect       { fill: var(--ink); opacity: .55; }
+.ink-leaves use      { fill: var(--ink); opacity: .8; }
+
+.ink-water__lines .ink-ripple {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  opacity: .26;
+}
+.ink-raft__deck rect      { fill: var(--ink); opacity: .62; }
+.ink-raft__reflection rect{ fill: var(--ink); opacity: .14; }
+/* the figure is the focal point: darkest ink, with the brush varying in weight */
+.ink-figure__robe         { fill: var(--ink); opacity: .82; }
+.ink-figure__arm          { fill: var(--ink); opacity: .7; }
+.ink-figure__head         { fill: var(--ink); opacity: .78; }
+.ink-figure__hat-brim     { fill: var(--ink); opacity: .86; }
+.ink-figure__pole         { stroke: var(--ink); opacity: .62; }
+.ink-wake__line           { fill: none; stroke: var(--ink); stroke-width: 1.5; stroke-linecap: round; opacity: .2; }
+.ink-bird                 { stroke: var(--ink); opacity: .38; }
+
+/* the hat carries the one whisper of colour — a faint seal-red, mostly ink */
+.ink-figure__hat { fill: color-mix(in srgb, var(--accent) 30%, var(--ink)); opacity: .8; }
+
+/* ---------- animation ---------- */
+/* raft poles slowly downstream, then loops back */
+@keyframes inkDrift {
+  0%   { transform: translateX(-16%); }
+  100% { transform: translateX(112%); }
+}
+/* gentle bob on the water */
+@keyframes inkBob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25%      { transform: translateY(-2.5px) rotate(-.5deg); }
+  75%      { transform: translateY(2px) rotate(.45deg); }
+}
+/* bamboo leaves stir in the breeze */
+@keyframes inkSway {
+  0%, 100% { transform: rotate(0deg); }
+  50%      { transform: rotate(3.2deg); }
+}
+/* ripples slide and breathe */
+@keyframes inkFlow {
+  0%   { transform: translateX(-14px); opacity: .10; }
+  50%  { opacity: .26; }
+  100% { transform: translateX(14px); opacity: .10; }
+}
+/* mist drifts laterally */
+@keyframes inkMist {
+  0%, 100% { transform: translateX(-3%); opacity: .42; }
+  50%      { transform: translateX(3%); opacity: .62; }
+}
+@keyframes inkBirds {
+  0%, 100% { transform: translate(0, 0); opacity: .30; }
+  50%      { transform: translate(-18px, -6px); opacity: .42; }
+}
+
+.ink-raft-drift {
+  animation: inkDrift 78s linear infinite;
+  will-change: transform;
+}
+.ink-raft-bob {
+  animation: inkBob 6.5s ease-in-out infinite;
+  transform-origin: 544px 314px;
+}
+.ink-leaves {
+  transform-box: fill-box;
+  transform-origin: 0% 50%;   /* pivot where the leaf meets the culm */
+  animation: inkSway 7s ease-in-out infinite;
+}
+.ink-leaves--b { animation-duration: 8.4s;  animation-delay: -1.2s; }
+.ink-leaves--c { animation-duration: 6.2s;  animation-delay: -2.4s; }
+.ink-leaves--d { animation-duration: 9.1s;  animation-delay: -0.6s; }
+.ink-leaves--e { animation-duration: 7.6s;  animation-delay: -3.1s; }
+.ink-leaves--f { animation-duration: 8.8s;  animation-delay: -1.8s; }
+.ink-leaves--g { animation-duration: 6.6s;  animation-delay: -4.2s; }
+.ink-leaves--h { animation-duration: 9.6s;  animation-delay: -2.9s; }
+.ink-leaves--i { animation-duration: 7.2s;  animation-delay: -0.9s; }
+
+.ink-ripple { animation: inkFlow 9s ease-in-out infinite; }
+.ink-ripple--2 { animation-duration: 11s;   animation-delay: -1.5s; }
+.ink-ripple--3 { animation-duration: 8.2s;  animation-delay: -3s; }
+.ink-ripple--4 { animation-duration: 12.5s; animation-delay: -2.2s; }
+.ink-ripple--5 { animation-duration: 10.2s; animation-delay: -4.4s; }
+.ink-ripple--6 { animation-duration: 13.5s; animation-delay: -0.8s; }
+.ink-ripple--7 { animation-duration: 9.6s;  animation-delay: -5.2s; }
+
+.ink-mist__band { animation: inkMist 22s ease-in-out infinite; }
+.ink-mist__band--2 { animation-duration: 28s; animation-delay: -6s; }
+.ink-mist__band--3 { animation-duration: 34s; animation-delay: -12s; }
+
+.ink-birds .ink-bird { animation: inkBirds 26s ease-in-out infinite; }
+.ink-bird--2 { animation-duration: 32s; animation-delay: -8s; }
+
+/* dark mode: ink on a night river — lift the washes, dim the mist */
+[data-theme="dark"] .ink-scene__svg { opacity: .42; }
+[data-theme="dark"] .ink-far        { opacity: .16; }
+[data-theme="dark"] .ink-water__body{ opacity: .12; }
+[data-theme="dark"] .ink-bamboo     { opacity: .34; }
+[data-theme="dark"] .ink-mist__band { opacity: .30; }
+[data-theme="dark"] .ink-water__lines .ink-ripple { opacity: .26; }
+
+/* narrow screens: the prose needs the room, so pull the scene back a little */
+@media (max-width: 860px) {
+  .ink-scene__svg { opacity: .5; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ink-raft-drift,
+  .ink-raft-bob,
+  .ink-leaves,
+  .ink-ripple,
+  .ink-mist__band,
+  .ink-birds .ink-bird { animation: none !important; }
+  /* park the raft mid-stream so the scene still composes */
+  .ink-raft-drift { transform: translateX(6%); }
+}
+
 /* ---------- theme toggle ---------- */
 .theme-toggle {
   display: inline-flex;
