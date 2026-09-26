@@ -25,6 +25,7 @@
       bamboo: "132,158,130",   // 竹青
       water:  "120,150,168",
       hat:    "228,113,79",
+      seal:   "214,88,62",     // vermilion, lifted for the dark ground
       deep:   "245,240,232"
     } : {
       dark: false,
@@ -33,6 +34,7 @@
       bamboo: "86,116,84",     // 竹青
       water:  "92,124,146",
       hat:    "178,62,40",     // 印章红
+      seal:   "170,48,34",     // vermilion seal paste
       deep:   "26,22,18"
     };
   }
@@ -321,6 +323,71 @@
     }
   }
 
+  /* ---------- inscription (題跋) + seal (印章) ---------- */
+  /* Two lines of verse, written in vertical columns read right-to-left,
+     then a carved stone seal below — the classical way to sign a painting. */
+  var VERSE = ["竹流清風自在", "一篙煙水無心"];   // "bamboo streams a clear breeze, at ease /
+                                                //  one pole through misty water, free of care"
+  var SEAL  = ["自", "在"];                      // 自在 — "at ease"
+
+  function drawInscription() {
+    var fs = Math.max(13, Math.min(W, H) * 0.0235);       // glyph size
+    var lead = fs * 1.34;                                 // column spacing
+    var x0 = W * 0.60;                                    // open water, clear of the portrait column
+    var y0 = H * 0.635;
+
+    ctx.save();
+    ctx.font = '400 ' + fs + 'px "Noto Serif SC", "Songti SC", "SimSun", serif';
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+
+    for (var c = 0; c < VERSE.length; c++) {
+      var col = VERSE[c];
+      var x = x0 + (VERSE.length - 1 - c) * lead;         // first column sits rightmost
+      // the ink dries a little unevenly down each column
+      for (var i = 0; i < col.length; i++) {
+        var a = 0.4 + 0.16 * noise(c * 9 + i * 3.7);
+        ctx.fillStyle = rgba(P.ink, a * (P.dark ? 1.15 : 1));
+        ctx.fillText(col.charAt(i), x + (noise(i + c * 5) - 0.5) * fs * 0.06,
+                                    y0 + i * fs * 1.16);
+      }
+    }
+    ctx.restore();
+
+    // ── seal: a small vermilion stone, carved with two characters ──
+    var sw = fs * 1.5;
+    var sx = x0 + lead * 0.5 - sw / 2;
+    var sy = y0 + Math.max(VERSE[0].length, VERSE[1].length) * fs * 1.16 + fs * 0.5;
+
+    ctx.save();
+    // the stone: slightly irregular, as if pressed by hand
+    ctx.translate(sx + sw / 2, sy + sw / 2);
+    ctx.rotate((noise(3.3) - 0.5) * 0.05);
+    ctx.beginPath();
+    var rr = sw * 0.1;
+    ctx.moveTo(-sw / 2 + rr, -sw / 2);
+    ctx.lineTo(sw / 2 - rr, -sw / 2);
+    ctx.quadraticCurveTo(sw / 2, -sw / 2, sw / 2, -sw / 2 + rr);
+    ctx.lineTo(sw / 2, sw / 2 - rr);
+    ctx.quadraticCurveTo(sw / 2, sw / 2, sw / 2 - rr, sw / 2);
+    ctx.lineTo(-sw / 2 + rr, sw / 2);
+    ctx.quadraticCurveTo(-sw / 2, sw / 2, -sw / 2, sw / 2 - rr);
+    ctx.lineTo(-sw / 2, -sw / 2 + rr);
+    ctx.quadraticCurveTo(-sw / 2, -sw / 2, -sw / 2 + rr, -sw / 2);
+    ctx.closePath();
+    ctx.fillStyle = rgba(P.seal, P.dark ? 0.72 : 0.66);
+    ctx.fill();
+
+    // carved characters, knocked out in the paper colour (朱文)
+    ctx.font = '600 ' + (sw * 0.46) + 'px "Noto Serif SC", "Songti SC", "SimSun", serif';
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillStyle = rgba(P.dark ? "20,18,15" : "246,244,239", 0.9);
+    ctx.fillText(SEAL[0], 0, -sw * 0.21);
+    ctx.fillText(SEAL[1], 0,  sw * 0.23);
+    ctx.restore();
+  }
+
   /* ---------- frame ---------- */
   function draw() {
     ctx.clearRect(0, 0, W, H);
@@ -330,6 +397,7 @@
     drawBamboo();
     drawRaft();
     drawBirds();
+    drawInscription();
   }
 
   function frame() {
